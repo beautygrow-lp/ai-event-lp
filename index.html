@@ -361,6 +361,14 @@
   @media (prefers-reduced-motion: reduce) {
     .staff:nth-of-type(odd), .staff:nth-of-type(even) { transform: none; }
   }
+  /* About items with icons (same illustrations as the DM flyer) */
+  .learn-ic { grid-template-columns: 1fr 1fr; gap: 12px; }
+  .learn-ic li { text-align: center; padding: 18px 10px 16px; }
+  .learn-ic .ic { display: grid; place-items: center; width: 76px; height: 76px; margin: 0 auto 10px; background: var(--green-soft); border-radius: 58% 42% 52% 48% / 48% 56% 44% 52%; }
+  .learn-ic .ic svg { width: 48px; height: 48px; }
+  .learn-ic b { display: block; font-size: 14px; letter-spacing: -.01em; line-height: 1.45; }
+  .learn-ic span:not(.ic) { display: block; margin-top: 6px; font-size: 13px; line-height: 1.6; color: var(--ink-sub); }
+  @media (min-width: 768px) { .learn-ic { grid-template-columns: repeat(4, 1fr); } }
 </style>
 </head>
 <body>
@@ -396,11 +404,11 @@
       <h2 id="sec-about">AI講習で、なにが<br>できるようになる？</h2>
       <p class="sec-lead">「AIってすごいらしい」で終わらせず、<br>サロンの仕事のどこで、どう使うかまで落とし込みます。</p>
 
-      <ul class="learn">
-        <li><span class="merit">お客様へのLINE返信や口コミ返信の下書きをAIが用意。自分は確認して送るだけ</span><span class="what">チャットツールの内容を読み込む（送信は人）</span></li>
-        <li><span class="merit">ブログやスタイル写真の掲載、クーポン更新などの入力作業をAIが代行</span><span class="what">AIがブラウザを操作（HPB・サロンボード）</span></li>
-        <li><span class="merit">自分の売上・指名数・再来率をAIがまとめ、振り返りが数分で終わる</span><span class="what">GoogleスプレッドシートまたはExcel連携</span></li>
-        <li><span class="merit">自分のスタイルやメニューなどをWEBページにまとめて、発信できる</span><span class="what">WEBページを公開して第三者に共有する</span></li>
+      <ul class="learn learn-ic">
+        <li><span class="ic"><svg viewBox="0 0 48 48" fill="none" stroke="#35422d" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 12h24a4 4 0 0 1 4 4v12a4 4 0 0 1-4 4H18l-7 6v-6H8a4 4 0 0 1-4-4V16a4 4 0 0 1 4-4z"/><path d="M12 20h16M12 25h10"/><path d="M38 18h2a4 4 0 0 1 4 4v10a4 4 0 0 1-4 4h-2v5l-6-5" stroke="#9a5b40"/></svg></span><b>口コミ・LINE返信</b><span>下書きはAI。<br>確認して送るだけ</span></li>
+        <li><span class="ic"><svg viewBox="0 0 48 48" fill="none" stroke="#35422d" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="9" width="38" height="28" rx="4"/><path d="M5 16h38"/><circle cx="10" cy="12.5" r=".8"/><circle cx="14" cy="12.5" r=".8"/><rect x="10" y="21" width="12" height="10" rx="2"/><path d="M26 22h12M26 27h8"/><path d="M33 33l4 9 2-4 4-1-10-4z" stroke="#9a5b40"/></svg></span><b>HPB・サロンボード</b><span>掲載・クーポン更新<br>の入力をAIが代行</span></li>
+        <li><span class="ic"><svg viewBox="0 0 48 48" fill="none" stroke="#35422d" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 40h36"/><rect x="10" y="26" width="6" height="14" rx="1.5"/><rect x="21" y="18" width="6" height="22" rx="1.5"/><rect x="32" y="11" width="6" height="29" rx="1.5"/><path d="M9 20l10-7 8 4 12-9" stroke="#9a5b40"/><path d="M34 8h5v5" stroke="#9a5b40"/></svg></span><b>売上・指名の振り返り</b><span>スプレッドシートや<br>Excelから数分で</span></li>
+        <li><span class="ic"><svg viewBox="0 0 48 48" fill="none" stroke="#35422d" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="14" y="5" width="20" height="38" rx="4"/><path d="M21 9h6"/><rect x="18" y="14" width="12" height="10" rx="2"/><path d="M18 28h12M18 32h8"/><path d="M8 18a14 14 0 0 0 0 12M4 15a20 20 0 0 0 0 18M40 18a14 14 0 0 1 0 12M44 15a20 20 0 0 1 0 18" stroke="#9a5b40"/></svg></span><b>WEBで発信</b><span>スタイルやメニューを<br>ページにまとめて共有</span></li>
       </ul>
       <p class="more-label">ほかにも、こんなことができます</p>
       <ul class="more">
