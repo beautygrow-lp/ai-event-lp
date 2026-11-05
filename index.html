@@ -112,7 +112,7 @@
   .site-head .org b { color: var(--ink); font-weight: 700; }
   .fee-note { color: var(--error); font-size: 12px; font-weight: 700; line-height: 1.6; }
   .event-box li.fee-note { padding-left: 0; font-size: 11px; font-weight: 500; }
-  .event-box li.seats { color: var(--accent-dark); font-weight: 700; }
+  .seats { text-align: center; color: var(--accent-dark); font-weight: 700; font-size: 14px; margin: 0 0 10px; }
   /* AI screen mock in the first view (illustration, labeled as such) */
   .mock { background: #fff; border-radius: var(--radius); margin: 0 0 18px; box-shadow: 0 6px 20px rgba(30, 42, 38, .06); overflow: hidden; }
   .mock-bar { display: flex; align-items: center; gap: 6px; padding: 8px 14px; background: var(--ink); color: #fff; font-size: 12px; font-weight: 700; }
@@ -211,7 +211,7 @@
   .staff + .staff { margin-top: 12px; }
   .hero-voice { display: flex; gap: 14px; align-items: center; margin: 0 0 18px; padding: 14px 16px; background: var(--card); border-radius: var(--blob-lg); box-shadow: var(--shadow); }
   .hero-voice img { width: 68px; height: 68px; flex-shrink: 0; object-fit: cover; object-position: 50% 20%; border-radius: 63% 37% 54% 46% / 55% 48% 52% 45%; box-shadow: 0 0 0 3px var(--paper), 0 0 0 4px var(--grass); }
-  .hv-quote { margin: 0; font-family: var(--serif); font-weight: 800; font-size: 16px; line-height: 1.6; }
+  .hv-quote { margin: 0; font-family: "Zen Kaku Gothic New", "Hiragino Sans", sans-serif; font-weight: 700; font-size: 16px; line-height: 1.6; }
   .hv-by { margin: 4px 0 0; font-size: 12px; color: var(--ink-sub); }
   .staff .who { display: flex; gap: 14px; align-items: center; margin: 0 0 10px; }
   .staff img { width: 72px; height: 72px; border-radius: 50%; object-fit: cover; object-position: 50% 20%; flex-shrink: 0; background: var(--cream); }
@@ -373,7 +373,7 @@
 </header>
 
 <main>
-  <!-- 1. First view (headline / lead / tags switch by utm_content=a|b|c to match the ad) -->
+  <!-- 1. First view (headline switches by utm_content=a|b|c to match the ad) -->
   <section class="hero" aria-labelledby="hero-title">
     <div class="wrap">
       <p class="eyebrow"><span>美容師のための AI実践講習</span></p>
@@ -385,45 +385,10 @@
           <p class="hv-by">高橋さん｜CELESTE 石神井公園店・川口店 店長</p>
         </div>
       </div>
-      <p class="lead" id="hero-lead">ブログ掲載、クーポン更新、口コミ返信。閉店後に残りがちな入力作業を、AIに任せるやり方を持ち帰れます。</p>
-
-      <!-- Illustration of what AI does (not a real screen). Text switches with the ad variant. -->
-      <div class="mock" aria-label="AIが下書きを作る画面のイメージ">
-        <div class="mock-bar"><i></i><i></i><i></i><span id="mock-title">口コミへの返信をAIが下書き</span></div>
-        <div class="mock-body">
-          <div class="mock-in" id="mock-in">口コミ：カットもカラーも大満足です！また伺います。</div>
-          <div class="mock-out"><b id="mock-label">AIの下書き</b><span id="mock-out">うれしいお言葉ありがとうございます！カラーの色味も気に入っていただけてよかったです。次回もお待ちしています。</span></div>
-          <span class="mock-ok" id="mock-ok">確認して送信</span>
-        </div>
-        <p class="mock-cap">※画面はイメージです</p>
-      </div>
-
-      <ul class="tags" id="hero-tags">
-        <li>口コミ・LINEの返信下書き</li>
-        <li>HPBブログ・スタイル掲載</li>
-        <li>売上・指名数の振り返り</li>
-        <li>施術の合間にスマホで確認</li>
-      </ul>
-
-      <div class="event-box">
-        <p class="date">12月1日（火）19:00〜21:00</p>
-        <ul>
-          <li>会場：Beauty Grow本社（予定）<span class="addr">東京都港区南青山1-15-9 第45興和ビル 8F</span></li>
-          <li>スタイリスト限定・定員10名（先着順）</li>
-          <li class="seats" id="seats-left" hidden></li>
-          <li>参加無料・終了後に懇親会あり（任意参加）</li>
-          <li class="fee-note">※ClaudeのProプラン料金（月額3,500円程度）のみ自己負担です（加入済みの方は不要）。</li>
-        </ul>
-      </div>
-
-      <p class="scissors">
-        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#2f6b5a" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M8.1 8.1 20 20M8.1 15.9 20 4"/></svg>
-        <span>サロンワークの「すき間時間」で使えるやり方だけ、持ち帰れます。</span>
-      </p>
-
       <div class="apply-box">
         <p class="apply-title">お申し込み</p>
         <p class="apply-sub">お申し込み方法は、次の2つから選べます</p>
+        <p class="seats" id="seats-left" hidden></p>
         <a class="btn js-cta" href="#apply">① フォームで申し込む<small>入力1分</small></a>
         <a class="btn-line js-dm" href="#" target="_blank" rel="noopener" hidden>② InstagramのDMで申し込む</a>
         <p class="dm-howto js-dm" hidden>DMより「AIイベントに参加希望」と送信ください</p>
@@ -649,29 +614,16 @@
     instagramId: 'beautygrow_recruit'
   };
 
-  /* ===== First view per ad creative (utm_content=a|b|c). Text only, inserted with textContent. ===== */
+  /* ===== Headline per ad creative (utm_content=a|b|c). Text only, inserted with textContent. ===== */
   var VARIANTS = {
     a: {
-      h1: ['閉店後のPC作業、', 'AIに任せて', '帰ろう。'],
-      lead: 'ブログ掲載、クーポン更新、口コミ返信。閉店後に残りがちな入力作業を、AIに任せるやり方を持ち帰れます。',
-      tags: ['口コミ・LINEの返信下書き', 'HPBブログ・スタイル掲載', '売上・指名数の振り返り', '施術の合間にスマホで確認']
+      h1: ['閉店後のPC作業、', 'AIに任せて', '帰ろう。']
     },
     b: {
-      h1: ['口コミ返信も、投稿文も。', '下書きはAIに', 'まかせる。'],
-      lead: '毎回ゼロから考えていた文章は、AIが下書き。あなたは確認して、ひとこと直すだけ。そのやり方を、当日その場で試します。',
-      tags: ['口コミ・LINEの返信下書き', 'HPBブログ・スタイル掲載', '売上・指名数の振り返り', '施術の合間にスマホで確認']
+      h1: ['口コミ返信も、投稿文も。', '下書きはAIに', 'まかせる。']
     },
     c: {
-      h1: ['店長の事務仕事、', '半分AIに', '渡そう。'],
-      lead: '売上の振り返り、シフトやスタッフ連絡の整理。月末に積み上がる事務作業をAIに渡して、スタッフと話す時間をつくる方法をお伝えします。',
-      tags: ['口コミ・LINEの返信下書き', 'HPBブログ・スタイル掲載', 'シフト・スタッフ連絡の整理', '施術の合間にスマホで整理'],
-      mock: {
-        title: '今月の振り返りをAIがまとめる',
-        label: 'AIのまとめ',
-        ok: '確認してOK',
-        input: '指示：今月の売上・指名数・再来率を、スタイリストごとにまとめて',
-        output: 'スタイリスト別の表にまとめました。再来率がいちばん伸びたのは〇〇さんです。新規のお客様への次回提案を、ミーティングの議題にしませんか？'
-      }
+      h1: ['店長の事務仕事、', '半分AIに', '渡そう。']
     }
   };
 
@@ -712,21 +664,6 @@
     h1.appendChild(document.createElement('br'));
     h1.appendChild(mark);
     h1.appendChild(document.createTextNode(variant.h1[2]));
-    document.getElementById('hero-lead').textContent = variant.lead;
-    var tags = document.getElementById('hero-tags');
-    tags.textContent = '';
-    variant.tags.forEach(function (t) {
-      var li = document.createElement('li');
-      li.textContent = t;
-      tags.appendChild(li);
-    });
-    if (variant.mock) {
-      document.getElementById('mock-title').textContent = variant.mock.title;
-      document.getElementById('mock-in').textContent = variant.mock.input;
-      document.getElementById('mock-out').textContent = variant.mock.output;
-      document.getElementById('mock-label').textContent = variant.mock.label;
-      document.getElementById('mock-ok').textContent = variant.mock.ok;
-    }
   }
 
   /* ----- Seats left (shown only when set) ----- */
