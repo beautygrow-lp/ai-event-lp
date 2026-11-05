@@ -209,7 +209,10 @@
   /* Cases (staff voices) */
   .staff { background: var(--cream); border-radius: var(--radius); padding: 16px 16px; box-shadow: 0 6px 20px rgba(30, 42, 38, .05); }
   .staff + .staff { margin-top: 12px; }
-  .mid-cta { margin: 24px 0 0; }
+  .hero-voice { display: flex; gap: 14px; align-items: center; margin: 0 0 18px; padding: 14px 16px; background: var(--card); border-radius: var(--blob-lg); box-shadow: var(--shadow); }
+  .hero-voice img { width: 68px; height: 68px; flex-shrink: 0; object-fit: cover; object-position: 50% 20%; border-radius: 63% 37% 54% 46% / 55% 48% 52% 45%; box-shadow: 0 0 0 3px var(--paper), 0 0 0 4px var(--grass); }
+  .hv-quote { margin: 0; font-family: var(--serif); font-weight: 800; font-size: 16px; line-height: 1.6; }
+  .hv-by { margin: 4px 0 0; font-size: 12px; color: var(--ink-sub); }
   .staff .who { display: flex; gap: 14px; align-items: center; margin: 0 0 10px; }
   .staff img { width: 72px; height: 72px; border-radius: 50%; object-fit: cover; object-position: 50% 20%; flex-shrink: 0; background: var(--cream); }
   .staff .tag { display: inline-block; font-size: 11px; font-weight: 700; color: var(--green); background: var(--green-soft); border-radius: 99px; padding: 1px 10px; }
@@ -375,6 +378,13 @@
     <div class="wrap">
       <p class="eyebrow"><span>美容師のための AI実践講習</span></p>
       <h1 id="hero-title">閉店後のPC作業、<br><mark>AIに任せて</mark>帰ろう。</h1>
+      <div class="hero-voice">
+        <img src="images/staff-takahashi.png" width="182" height="257" alt="高橋さんの写真">
+        <div>
+          <p class="hv-quote">「月20時間の店長業務が10分になって家族との時間が増えました！」</p>
+          <p class="hv-by">高橋さん｜CELESTE 石神井公園店・川口店 店長</p>
+        </div>
+      </div>
       <p class="lead" id="hero-lead">ブログ掲載、クーポン更新、口コミ返信。閉店後に残りがちな入力作業を、AIに任せるやり方を持ち帰れます。</p>
 
       <!-- Illustration of what AI does (not a real screen). Text switches with the ad variant. -->
@@ -422,59 +432,8 @@
     </div>
   </section>
 
-  <!-- 2. Cases (in-house results; order follows utm_content) -->
-  <section class="paper" aria-labelledby="sec-cases">
-    <div class="wrap">
-      <span class="sec-label">CASE</span>
-      <h2 id="sec-cases">Beauty Growの現場で、<br>実際に変わったこと</h2>
-      <p class="sec-lead">講習で扱うのは、私たちが自社のサロンで<br>使って、効果があったやり方だけです。</p>
-
-      <!-- PROVISIONAL: draft comments. Replace with each person's own words (and confirm photo consent) before going live. -->
-      <article class="staff" data-staff="takahashi">
-        <div class="who">
-          <img src="images/staff-takahashi.png" width="182" height="257" alt="高橋さんの写真" loading="lazy">
-          <div>
-            <span class="tag">店長の事務・振り返り</span>
-            <p class="name">高橋さん</p>
-            <p class="role">CELESTE 石神井公園店・川口店 店長</p>
-          </div>
-        </div>
-        <h3>「2店舗分の数字の振り返りが、AIで数分で終わるようになりました。」</h3>
-        <p class="detail">空いた時間はスタッフとの面談に。業務効率化だけでなく、マネージメントも上手くいくようになりました。</p>
-      </article>
-
-      <article class="staff" data-staff="kato">
-        <div class="who">
-          <img src="images/staff-kato.jpg" width="230" height="230" alt="加藤さんの写真" loading="lazy">
-          <div>
-            <span class="tag">1on1・会議資料の作成</span>
-            <p class="name">加藤さん</p>
-            <p class="role">CELESTE 葛西店 サロンマネージャー</p>
-          </div>
-        </div>
-        <h3>「1on1や会議の資料づくりをAIに任せたら、時間が減って、精度も上がりました。」</h3>
-        <p class="detail">売上データや記録をAIに読み込ませて下書き。論点の抜けや数字の見落としが減りました。</p>
-      </article>
-
-      <article class="staff" data-staff="yajima">
-        <div class="who">
-          <img src="images/staff-yajima.png" width="144" height="256" alt="矢島さんの写真" loading="lazy">
-          <div>
-            <span class="tag">口コミ・LINEの返信</span>
-            <p class="name">矢島さん</p>
-            <p class="role">アイラッシュ統括マネージャー</p>
-          </div>
-        </div>
-        <h3>「口コミ返信は、AIの下書きを直すだけになりました。」</h3>
-        <p class="detail">サロンの言葉づかいで下書きが届くので、確認してひとこと足すだけ。送信は自分で行います。</p>
-      </article>
-      <div class="mid-cta"><a class="btn js-cta" href="#apply">無料で申し込む<small>※Claude Pro料金のみ自己負担</small></a></div>
-      <p class="provisional" id="cases-provisional">※社内確認用の仮のコメントです（本人確認後に差し替え）</p>
-    </div>
-  </section>
-
-  <!-- 3. About -->
-  <section aria-labelledby="sec-about">
+  <!-- 2. About -->
+  <section class="paper" aria-labelledby="sec-about">
     <div class="wrap">
       <span class="sec-label">ABOUT</span>
       <h2 id="sec-about">AI講習で、なにが<br>できるようになる？</h2>
@@ -492,27 +451,11 @@
         <li>施術の合間に、スマホで確認・承認</li>
         <li>作業を並行で走らせ、同時にいくつも片づける</li>
       </ul>
-
-      <h3 class="sub-h">当日の流れ</h3>
-      <ol class="flow">
-        <li><h3>AIで、サロンの仕事はどこまで変わる？</h3><p>Beauty Growの現場で実際に使っている画面を見ながら、できること・できないことを整理します。</p></li>
-        <li><h3>講師が目の前で実演</h3><p>口コミ返信の下書き、HPBへの掲載、売上の振り返りを、その場でAIに任せてみせます。</p></li>
-        <li><h3>自分の仕事で、いっしょに試す</h3><p>あなたが毎日やっている作業を1つ選んで、AIへの任せ方を考えます。質問はいつでもどうぞ。</p></li>
-        <li><h3>懇親会<span class="opt">任意参加</span></h3><p>参加者どうしや講師と、ざっくばらんに話せる時間です。</p></li>
-      </ol>
-
-      <h3 class="sub-h">参加までの準備は、2つだけ</h3>
-      <div class="prep">
-        <ol>
-          <li><b>ClaudeのProプランに加入する</b><span>Claude（クロード）は、ChatGPTのように会話しながら仕事を手伝ってくれるAIです。加入の手順は、参加が確定した方にメールでお送りします（月額3,500円程度。加入済みの方は不要）。</span></li>
-          <li><b>スマートフォンとパソコンを持ってくる</b><span>パソコンはMac・Windowsどちらでも大丈夫です。特別なITの知識はいりません。</span></li>
-        </ol>
-      </div>
     </div>
   </section>
 
-  <!-- 4. Instructor & organizer -->
-  <section class="paper" aria-labelledby="sec-instructor">
+  <!-- 3. Instructor comment -->
+  <section aria-labelledby="sec-instructor">
     <div class="wrap">
       <span class="sec-label">INSTRUCTOR</span>
       <h2 id="sec-instructor">なぜ、美容室の代表が<br>自分で教えるのか</h2>
@@ -533,9 +476,15 @@
         </div>
         <p class="provisional" id="comment-provisional">※社内確認用の仮のコメントです（本人確認後に差し替え）</p>
       </div>
-      <div class="mid-cta"><a class="btn js-cta" href="#apply">無料で申し込む<small>※Claude Pro料金のみ自己負担</small></a></div>
 
-      <h3 class="sub-h">主催者について</h3>
+    </div>
+  </section>
+
+  <!-- 4. Organizer -->
+  <section class="paper" aria-labelledby="sec-organizer">
+    <div class="wrap">
+      <span class="sec-label">ORGANIZER</span>
+      <h2 id="sec-organizer">主催者について</h2>
       <table class="info">
         <tbody>
           <tr><th scope="row">会社名</th><td>株式会社Beauty Grow</td></tr>
@@ -570,44 +519,8 @@
     </div>
   </section>
 
-  <!-- 6. FAQ -->
-  <section class="paper faq" aria-labelledby="sec-faq">
-    <div class="wrap">
-      <span class="sec-label">FAQ</span>
-      <h2 id="sec-faq">よくある質問</h2>
-      <details>
-        <summary>なぜ無料で開催するのですか？</summary>
-        <div class="a"><p>AIで美容師の働き方を変える取り組みを、自社の中だけでなく業界に広げたいと考えているからです。主催のBeauty Growを知っていただく機会でもあります。</p></div>
-      </details>
-      <details>
-        <summary>AIを使ったことがなくても大丈夫ですか？</summary>
-        <div class="a"><p>大丈夫です。AIで何ができるのかという基本から始めます。操作もその場でいっしょに進めます。</p></div>
-      </details>
-      <details>
-        <summary>本当に無料ですか？あとから費用はかかりませんか？</summary>
-        <div class="a"><p>講習の参加費は無料です。ただし、当日AI（Claude Code）を使うため、「Claude」のProプラン（月額約3,500円・米ドル建てのため為替により変動）への加入が必要で、その料金のみ自己負担になります。すでに加入済みの方は追加費用はかかりません。加入方法は、参加確定後の案内メールでお知らせします。このほかに、講習の中で有料のサービスや商材を販売することはありません。</p></div>
-      </details>
-      <details>
-        <summary>パソコンは必要ですか？</summary>
-        <div class="a"><p>はい、スマートフォンとパソコンの両方をお持ちください。パソコンはMac・Windowsのどちらでも大丈夫です。</p></div>
-      </details>
-      <details>
-        <summary>勧誘はありますか？</summary>
-        <div class="a"><p>講習のあとの懇親会（任意参加）で、主催の株式会社Beauty Growについて少しご紹介する時間があります。懇親会への参加は自由です。</p></div>
-      </details>
-      <details>
-        <summary>アシスタントでも参加できますか？</summary>
-        <div class="a"><p>今回はスタイリストの方限定です。アシスタント向けの回も検討していますので、InstagramのDMでお気軽にお知らせください。</p></div>
-      </details>
-      <details>
-        <summary>勤務先のサロンに知られずに参加できますか？</summary>
-        <div class="a"><p>はい。ご入力の情報を、勤務先のサロンに伝えることはありません。勤務先サロン名の入力も任意です。</p></div>
-      </details>
-    </div>
-  </section>
-
-  <!-- 7. Form -->
-  <section id="apply" aria-labelledby="sec-apply">
+  <!-- 6. Form -->
+  <section id="apply" class="paper" aria-labelledby="sec-apply">
     <div class="wrap">
       <span class="sec-label">ENTRY</span>
       <h2 id="sec-apply">お申し込み</h2>
@@ -702,7 +615,7 @@
   </section>
 </main>
 
-<!-- 8. Footer -->
+<!-- 7. Footer -->
 <footer>
   <div class="wrap">
     <p class="org">主催：株式会社Beauty Grow</p>
@@ -822,13 +735,6 @@
     seats.textContent = CONFIG.seatsLeft > 0 ? '残り' + CONFIG.seatsLeft + '席' : '満席（キャンセル待ちで受付中）';
     seats.hidden = false;
   }
-
-  /* ----- Staff voices: show the person closest to the ad first ----- */
-  var FIRST_STAFF = { a: 'yajima', b: 'yajima', c: 'takahashi' };
-  var firstKey = FIRST_STAFF[String(form.elements.utm_content.value).toLowerCase()] || 'yajima';
-  var firstCard = document.querySelector('[data-staff="' + firstKey + '"]');
-  var firstOfAll = document.querySelector('[data-staff]');
-  if (firstCard && firstOfAll && firstCard !== firstOfAll) firstOfAll.parentNode.insertBefore(firstCard, firstOfAll);
 
   /* ----- Instagram DM links (hidden until a valid account ID is set) ----- */
   if (/^[A-Za-z0-9._]{1,30}$/.test(CONFIG.instagramId)) {
