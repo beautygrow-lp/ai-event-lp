@@ -369,6 +369,14 @@
   .learn-ic b { display: block; font-size: 14px; letter-spacing: -.01em; line-height: 1.45; }
   .learn-ic span:not(.ic) { display: block; margin-top: 6px; font-size: 13px; line-height: 1.6; color: var(--ink-sub); }
   @media (min-width: 768px) { .learn-ic { grid-template-columns: repeat(4, 1fr); } }
+  /* "More" items with icons */
+  .more-ic { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 12px; }
+  .more-ic li { display: block; text-align: center; font-size: 11.5px; line-height: 1.55; padding: 14px 4px 12px; border: 0; border-radius: var(--blob); background: var(--card); box-shadow: var(--shadow); color: var(--ink); font-weight: 500; }
+  .more-ic .ic { display: grid; place-items: center; width: 52px; height: 52px; margin: 0 auto 8px; background: var(--green-soft); border-radius: 58% 42% 52% 48% / 48% 56% 44% 52%; }
+  .more-ic .ic svg { width: 34px; height: 34px; }
+  /* Instructor highlight */
+  .badge-70 { display: flex; justify-content: center; align-items: baseline; gap: 6px; white-space: nowrap; margin: -4px 0 26px; padding: 8px 14px 9px; font-size: 15px; background: var(--accent); color: #fff; font-weight: 700; border-radius: var(--blob); box-shadow: 0 8px 18px -10px rgba(125, 70, 48, .7); }
+  .badge-70 b { font-family: var(--serif); font-size: 28px; font-weight: 800; line-height: 1; letter-spacing: .02em; }
 </style>
 </head>
 <body>
@@ -393,7 +401,6 @@
           <p class="hv-by">高橋さん｜CELESTE 石神井公園店・川口店 店長</p>
         </div>
       </div>
-      <p class="host-note">主催：株式会社Beauty Grow（直営70店舗の美容室を運営）</p>
     </div>
   </section>
 
@@ -411,10 +418,10 @@
         <li><span class="ic"><svg viewBox="0 0 48 48" fill="none" stroke="#35422d" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="14" y="5" width="20" height="38" rx="4"/><path d="M21 9h6"/><rect x="18" y="14" width="12" height="10" rx="2"/><path d="M18 28h12M18 32h8"/><path d="M8 18a14 14 0 0 0 0 12M4 15a20 20 0 0 0 0 18M40 18a14 14 0 0 1 0 12M44 15a20 20 0 0 1 0 18" stroke="#9a5b40"/></svg></span><b>WEBで発信</b><span>スタイルやメニューを<br>ページにまとめて共有</span></li>
       </ul>
       <p class="more-label">ほかにも、こんなことができます</p>
-      <ul class="more">
-        <li>会社の手順書をAIに持たせ、新人教育やカウンセリングに活用</li>
-        <li>施術の合間に、スマホで確認・承認</li>
-        <li>作業を並行で走らせ、同時にいくつも片づける</li>
+      <ul class="more more-ic">
+        <li><span class="ic"><svg viewBox="0 0 48 48" fill="none" stroke="#35422d" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 10c6-2 11-1 16 3v26c-5-4-10-5-16-3z"/><path d="M40 10c-6-2-11-1-16 3v26c5-4 10-5 16-3z"/><path d="M13 18h6M13 23h6M29 18h6M29 23h6"/><path d="M33 34l3 3 6-7" stroke="#9a5b40"/></svg></span>手順書をAIに<br>持たせて新人教育</li>
+        <li><span class="ic"><svg viewBox="0 0 48 48" fill="none" stroke="#35422d" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="14" y="5" width="20" height="38" rx="4"/><path d="M21 9h6"/><circle cx="24" cy="24" r="7" stroke="#9a5b40"/><path d="M20.5 24l2.5 2.5 4.5-5" stroke="#9a5b40"/></svg></span>施術の合間に<br>スマホで承認</li>
+        <li><span class="ic"><svg viewBox="0 0 48 48" fill="none" stroke="#35422d" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="9" width="24" height="8" rx="3"/><rect x="12" y="20" width="24" height="8" rx="3"/><rect x="18" y="31" width="24" height="8" rx="3"/><path d="M34 13h8M38 9l4 4-4 4" stroke="#9a5b40"/></svg></span>いくつもの作業を<br>同時に片づける</li>
       </ul>
 
       <div class="apply-box" style="margin-top:32px">
@@ -439,10 +446,11 @@
         <div class="head">
           <img src="images/instructor-saito.png" width="118" height="154" alt="講師 齋藤 光司の写真">
           <div>
-            <p class="role">講師｜株式会社Beauty Grow 代表<br>直営70店舗の美容室を運営</p>
+            <p class="role">講師｜株式会社Beauty Grow 代表</p>
             <p class="name">齋藤 光司</p>
           </div>
         </div>
+        <p class="badge-70"><span>5年で</span><b>70店舗</b><span>サロン展開！</span></p>
         <div class="comment">
           <p>「AIの講習なのに、なぜ美容室の社長が？」と思われるかもしれません。私自身が毎日AIを使ってサロンの運営を回していて、現場で本当に使える場面を知っているからです。</p>
           <p>AIで効率化して空いた時間で、もっとお客様に向き合ってほしい。そして売上も伸ばして、みんなが無理なく稼げる環境をつくりたい。それが、この講習を自分で開く一番の理由です。</p>
@@ -461,7 +469,7 @@
         <tbody>
           <tr><th scope="row">会社名</th><td>株式会社Beauty Grow</td></tr>
           <tr><th scope="row">代表</th><td>齋藤 光司</td></tr>
-          <tr><th scope="row">事業内容</th><td>美容室の運営（直営70店舗）</td></tr>
+          <tr><th scope="row">事業内容</th><td>美容室事業、アイラッシュ事業、ヘアカラー事業</td></tr>
           <tr><th scope="row">所在地</th><td>東京都港区南青山1-15-9 第45興和ビル 8F</td></tr>
           <tr><th scope="row">公式サイト</th><td><a href="https://beautygrow.co.jp/" target="_blank" rel="noopener">beautygrow.co.jp</a></td></tr>
           <tr class="js-ig-row" hidden><th scope="row">Instagram</th><td><a class="js-ig-link" href="#" target="_blank" rel="noopener"></a></td></tr>
@@ -480,7 +488,7 @@
           <tr><th scope="row">講習名</th><td>美容師のためのAI実践講習</td></tr>
           <tr><th scope="row">日時</th><td>12月1日（火）19:00〜21:00<small>終了後に懇親会（任意参加）</small></td></tr>
           <tr><th scope="row">会場</th><td>Beauty Grow本社（予定）<small>東京都港区南青山1-15-9 第45興和ビル 8F</small><small>参加人数に応じて変更する場合があります。お申し込みの方にご連絡します</small></td></tr>
-          <tr><th scope="row">対象</th><td>美容師スタイリスト限定<small>店長・スタイリストの方</small></td></tr>
+          <tr><th scope="row">対象</th><td>美容師スタイリスト限定</td></tr>
           <tr><th scope="row">定員</th><td>10名（先着順）</td></tr>
           <tr><th scope="row">参加費</th><td>無料</td></tr>
           <tr><th scope="row">持ち物</th><td>パソコン</td></tr>
@@ -533,13 +541,9 @@
           </div>
 
           <div class="field" data-field="position">
-            <span class="label" id="l-position">現在のお立場<span class="req">必須</span></span>
-            <div class="radios" role="radiogroup" aria-labelledby="l-position">
-              <label><input type="radio" name="position" value="店長">店長</label>
-              <label><input type="radio" name="position" value="スタイリスト">スタイリスト</label>
-            </div>
+            <label for="f-position">現在のお立場<span class="opt-badge">任意</span></label>
+            <input type="text" id="f-position" name="position" maxlength="20" placeholder="例）店長、スタイリスト">
             <span class="hint">本講習は美容師スタイリストの方限定です</span>
-            <p class="err">お立場を選んでください</p>
           </div>
 
           <div class="field" data-field="salon">
@@ -743,7 +747,6 @@
       setError('kana', f.kana.value !== '' && !KANA_RE.test(f.kana.value)),
       setError('email', !EMAIL_RE.test(f.email.value)),
       setError('tel', !/^0\d{9,10}$/.test(telDigits)),
-      setError('position', !form.querySelector('input[name="position"]:checked')),
       setError('consent', !f.consent.checked)
     ];
     return checks.every(Boolean);
