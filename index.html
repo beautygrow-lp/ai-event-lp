@@ -1,0 +1,899 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- ===== TEST MODE: true while checking before launch. Set to false to go live. ===== -->
+<script>
+  window.LP_TEST_MODE = true;
+  if (window.LP_TEST_MODE) {
+    var robots = document.createElement('meta');
+    robots.name = 'robots';
+    robots.content = 'noindex, nofollow';
+    document.head.appendChild(robots);
+  }
+</script>
+<title>美容師のためのAI実践講習｜主催：株式会社Beauty Grow</title>
+<meta name="description" content="口コミ返信、HPBブログ掲載、売上の振り返り。サロンの事務作業をAIに任せるやり方を、BeautyGrow代表が実演します。12月1日（火）19:00〜・スタイリスト限定・定員10名。参加無料（ClaudeのProプラン料金のみ自己負担）。">
+
+<!-- OGP (og:url / og:image must be absolute URLs) -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="美容師のためのAI実践講習">
+<meta property="og:title" content="美容師のためのAI実践講習｜スタイリスト限定10名">
+<meta property="og:description" content="サロンワークの「すき間時間」で使えるAIのやり方だけ、持ち帰れます。12月1日（火）19:00〜21:00。参加無料（ClaudeのProプラン料金のみ自己負担）。主催：株式会社Beauty Grow">
+<meta property="og:url" content="【公開URL】/">
+<meta property="og:image" content="【公開URL】/images/ogp.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+
+<!-- Meta Pixel: PageView only. Personal data from the form is never sent. -->
+<script>
+  (function () {
+    var PIXEL_ID = '【ピクセルID】';
+    if (!/^\d+$/.test(PIXEL_ID)) return; // skip until a real pixel ID is set
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+    document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    // Disable automatic form/button data collection so form inputs never reach Meta
+    fbq('set', 'autoConfig', false, PIXEL_ID);
+    fbq('init', PIXEL_ID);
+    fbq('track', 'PageView');
+  })();
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@700;900&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    /* Tones follow the ad banners (cream / deep green ink / salmon underline / red pill) */
+    --cream: #f6f1ea;
+    --paper: #fffdf9;
+    --ink: #1e2a26;
+    --ink-sub: #5d6662;
+    --line: #e6dfd4;
+    --accent: #c9533a;
+    --accent-dark: #a8432d;
+    --hl: #f6c4b6;
+    --green: #2f6b5a;
+    --green-soft: #e4efe9;
+    --error: #c62828;
+    --radius: 16px;
+    --cta-h: 76px;
+    --serif: "Noto Serif JP", "Hiragino Mincho ProN", "Yu Mincho", serif;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--cream);
+    color: var(--ink);
+    font-family: "Noto Sans JP", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif;
+    font-size: 16px;
+    line-height: 1.8;
+    padding-bottom: calc(var(--cta-h) + env(safe-area-inset-bottom));
+  }
+  img { max-width: 100%; height: auto; display: block; }
+  a { color: var(--accent-dark); }
+  .wrap { max-width: 600px; margin: 0 auto; padding: 0 20px; }
+  section { padding: 60px 0; }
+  section.paper { background: var(--paper); }
+  .sec-label {
+    display: block; text-align: center; font-size: 12px; letter-spacing: .2em;
+    color: var(--accent); font-weight: 700; margin-bottom: 8px;
+  }
+  h2 {
+    font-family: var(--serif); font-weight: 900;
+    font-size: 24px; line-height: 1.5; text-align: center; margin: 0 0 12px;
+  }
+  .sec-lead { text-align: center; color: var(--ink-sub); font-size: 15px; margin: 0 0 32px; }
+  mark {
+    background: linear-gradient(transparent 62%, var(--hl) 62%);
+    color: inherit; padding: 0 .05em;
+  }
+  /* Provisional content: must be removed or replaced before going live */
+  .provisional { color: var(--error); font-size: 12px; font-weight: 700; margin: 8px 0 0; }
+
+  /* Header */
+  .site-head { background: var(--cream); border-bottom: 1px solid var(--line); }
+  .site-head .wrap { display: flex; align-items: center; justify-content: space-between; height: 52px; }
+  .site-head .org { font-size: 12px; color: var(--ink-sub); }
+  .site-head .org b { color: var(--ink); font-weight: 700; }
+  .fee-note { color: var(--error); font-size: 12px; font-weight: 700; line-height: 1.6; }
+  .event-box li.fee-note { padding-left: 0; font-size: 11px; font-weight: 500; }
+  .event-box li.seats { color: var(--accent-dark); font-weight: 700; }
+  /* AI screen mock in the first view (illustration, labeled as such) */
+  .mock { background: #fff; border-radius: var(--radius); margin: 0 0 18px; box-shadow: 0 6px 20px rgba(30, 42, 38, .06); overflow: hidden; }
+  .mock-bar { display: flex; align-items: center; gap: 6px; padding: 8px 14px; background: var(--ink); color: #fff; font-size: 12px; font-weight: 700; }
+  .mock-bar i { width: 8px; height: 8px; border-radius: 50%; background: #ffffff55; display: inline-block; }
+  .mock-bar span { margin-left: 4px; }
+  .mock-body { padding: 14px; display: grid; gap: 8px; font-size: 13px; line-height: 1.65; }
+  .mock-in { justify-self: start; max-width: 85%; background: #f2efea; border-radius: 12px 12px 12px 2px; padding: 8px 12px; color: var(--ink-sub); }
+  .mock-out { justify-self: end; max-width: 92%; background: var(--green-soft); border-radius: 12px 12px 2px 12px; padding: 8px 12px; }
+  .mock-out b { display: block; font-size: 11px; color: var(--green); }
+  .mock-ok { justify-self: end; font-size: 12px; font-weight: 700; color: #fff; background: var(--accent); border-radius: 99px; padding: 3px 14px; }
+  .mock-cap { margin: 0; padding: 0 14px 10px; font-size: 11px; color: var(--ink-sub); text-align: right; }
+  /* Preparation steps */
+  .prep { background: #fff; border-radius: var(--radius); padding: 18px; }
+  .prep ol { margin: 0; padding-left: 1.4em; display: grid; gap: 10px; }
+  .prep li b { display: block; }
+  .prep li span { font-size: 14px; color: var(--ink-sub); }
+  .more { list-style: none; padding: 0; margin: 14px 0 0; display: flex; flex-wrap: wrap; gap: 8px; }
+  .more li { font-size: 12px; background: #fff; border: 1px solid var(--line); border-radius: 99px; padding: 3px 12px; }
+  .more-label { font-size: 13px; font-weight: 700; color: var(--ink-sub); margin: 20px 0 0; text-align: center; }
+  .event-box li.fee-note::before { display: none; }
+  .event-box .addr { display: block; font-size: 12px; color: var(--ink-sub); }
+  .apply-box { background: #fff; border-radius: var(--radius); padding: 18px; }
+  .apply-title { font-family: var(--serif); font-weight: 900; font-size: 22px; text-align: center; margin: 0; }
+  .apply-sub { text-align: center; font-size: 13px; color: var(--ink-sub); margin: 0 0 12px; }
+  .dm-howto { text-align: center; font-size: 13px; color: var(--ink-sub); margin: 6px 0 0; }
+
+  /* Hero */
+  .hero { padding: 32px 0 44px; }
+  .hero .eyebrow { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin: 0 0 14px; }
+  .hero .eyebrow span:first-child { font-weight: 700; font-size: 14px; letter-spacing: .04em; }
+  .hero h1 {
+    font-family: var(--serif); font-weight: 900;
+    font-size: 31px; line-height: 1.45; margin: 0 0 16px; letter-spacing: .01em;
+  }
+  .hero .lead { margin: 0 0 22px; color: var(--ink-sub); font-size: 15px; }
+  .tags { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; padding: 0; margin: 0 0 18px; }
+  .tags li { background: #fff; border: 1px solid var(--line); border-radius: 99px; padding: 4px 14px; font-size: 13px; font-weight: 500; }
+  .event-box { background: #fff; border-radius: var(--radius); padding: 18px; margin: 0 0 20px; }
+  .event-box .date { font-family: var(--serif); font-weight: 900; font-size: 24px; line-height: 1.4; margin: 0 0 8px; }
+  .event-box ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 4px; font-size: 14px; }
+  .event-box li { padding-left: 1.2em; position: relative; }
+  .event-box li::before { content: ""; position: absolute; left: 2px; top: .7em; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
+  .scissors { display: flex; gap: 10px; align-items: center; font-size: 13px; color: var(--ink-sub); margin: 0 0 22px; }
+  .scissors svg { flex-shrink: 0; }
+  .host-note { font-size: 12px; color: var(--ink-sub); margin: 12px 0 0; text-align: center; }
+
+  /* Buttons */
+  .btn {
+    display: flex; align-items: center; justify-content: center; width: 100%;
+    min-height: 56px; border: 0; border-radius: 99px; background: var(--accent); color: #fff;
+    font-size: 17px; font-weight: 700; text-decoration: none; cursor: pointer;
+    box-shadow: 0 4px 14px rgba(201, 83, 58, .28); transition: background .15s;
+    font-family: inherit;
+  }
+  .btn:hover { background: var(--accent-dark); }
+  .btn[disabled], .btn.is-closed { background: #a9aeac; box-shadow: none; cursor: not-allowed; }
+  .btn small { font-size: 12px; font-weight: 400; margin-left: 8px; opacity: .9; }
+  .btn-line {
+    display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%;
+    min-height: 50px; margin-top: 10px; border: 1.5px solid var(--ink); border-radius: 99px;
+    background: transparent; color: var(--ink); font-size: 15px; font-weight: 700; text-decoration: none;
+  }
+  .btn-line:hover { background: rgba(30, 42, 38, .05); }
+
+  /* Sticky CTA */
+  .sticky-cta {
+    position: fixed; left: 0; right: 0; bottom: 0; z-index: 50;
+    background: rgba(246, 241, 234, .96); border-top: 1px solid var(--line);
+    padding: 10px 16px calc(10px + env(safe-area-inset-bottom));
+    transition: transform .25s ease;
+    -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
+  }
+  .sticky-cta .wrap { padding: 0; }
+  .sticky-cta.is-hidden { transform: translateY(110%); }
+
+  /* About: what you learn */
+  .learn { list-style: none; padding: 0; margin: 0; display: grid; gap: 12px; }
+  .learn li { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 16px 18px; }
+  .learn .merit { display: block; font-weight: 700; line-height: 1.65; }
+  .learn .what { display: block; font-size: 12px; font-weight: 700; color: var(--green); margin-top: 4px; }
+  .flow { list-style: none; padding: 0; margin: 32px 0 0; counter-reset: flow; }
+  .flow li { position: relative; padding: 0 0 18px 44px; }
+  .flow li::before {
+    counter-increment: flow; content: counter(flow);
+    position: absolute; left: 0; top: 0; width: 30px; height: 30px; border-radius: 50%;
+    background: var(--ink); color: #fff; font-weight: 700; font-size: 14px; line-height: 30px; text-align: center;
+  }
+  .flow li:not(:last-child)::after { content: ""; position: absolute; left: 14px; top: 34px; bottom: 4px; width: 2px; background: var(--line); }
+  .flow h3 { margin: 0 0 2px; font-size: 16px; line-height: 1.6; }
+  .flow p { margin: 0; font-size: 14px; color: var(--ink-sub); }
+  .flow .opt { font-size: 11px; color: var(--accent-dark); border: 1px solid var(--accent); border-radius: 99px; padding: 0 8px; margin-left: 6px; vertical-align: 2px; font-weight: 700; }
+  .sub-h { font-family: var(--serif); font-weight: 900; font-size: 18px; margin: 40px 0 16px; text-align: center; }
+
+  /* Cases (staff voices) */
+  .staff { background: var(--cream); border-radius: var(--radius); padding: 16px 16px; box-shadow: 0 6px 20px rgba(30, 42, 38, .05); }
+  .staff + .staff { margin-top: 12px; }
+  .mid-cta { margin: 24px 0 0; }
+  .staff .who { display: flex; gap: 14px; align-items: center; margin: 0 0 10px; }
+  .staff img { width: 72px; height: 72px; border-radius: 50%; object-fit: cover; object-position: 50% 20%; flex-shrink: 0; background: var(--cream); }
+  .staff .tag { display: inline-block; font-size: 11px; font-weight: 700; color: var(--green); background: var(--green-soft); border-radius: 99px; padding: 1px 10px; }
+  .staff .name { margin: 2px 0 0; font-weight: 700; font-size: 16px; line-height: 1.4; }
+  .staff .role { margin: 0; font-size: 12px; color: var(--ink-sub); line-height: 1.5; }
+  .staff h3 { font-family: var(--serif); font-weight: 900; font-size: 17px; line-height: 1.6; margin: 0 0 6px; }
+  .staff p.detail { margin: 0; font-size: 13px; line-height: 1.7; color: var(--ink-sub); }
+
+  /* Instructor */
+  .profile { background: #fff; border-radius: var(--radius); padding: 22px 18px; }
+  .profile .head { display: flex; gap: 16px; align-items: center; margin-bottom: 16px; }
+  .profile img { width: 88px; height: 88px; border-radius: 50%; object-fit: cover; object-position: 50% 15%; flex-shrink: 0; background: var(--cream); }
+  .profile .role { font-size: 12px; color: var(--accent-dark); font-weight: 700; margin: 0; }
+  .profile .name { font-family: var(--serif); font-weight: 900; font-size: 22px; margin: 0; line-height: 1.4; }
+  .profile .name small { font-family: "Noto Sans JP", sans-serif; font-weight: 400; font-size: 12px; color: var(--ink-sub); margin-left: 6px; }
+  .profile .bio { font-size: 14px; color: var(--ink-sub); margin: 0 0 16px; }
+  .comment { position: relative; background: var(--cream); border-radius: 12px; padding: 18px 16px 16px; }
+  .comment::before { content: "\201C"; position: absolute; left: 12px; top: -14px; font-family: var(--serif); font-size: 48px; line-height: 1; color: var(--accent); }
+  .comment p { margin: 0; font-size: 15px; }
+  .comment p + p { margin-top: 10px; }
+
+  /* Tables */
+  .info { width: 100%; border-collapse: collapse; font-size: 15px; background: #fff; border-radius: var(--radius); overflow: hidden; }
+  .info th, .info td { border-bottom: 1px solid var(--line); padding: 13px 14px; text-align: left; vertical-align: top; }
+  .info tr:last-child th, .info tr:last-child td { border-bottom: 0; }
+  .info th { width: 30%; color: var(--ink-sub); font-weight: 700; font-size: 13px; white-space: nowrap; }
+  .info td small { display: block; color: var(--ink-sub); font-size: 12px; }
+
+  /* FAQ */
+  .faq details { background: #fff; border-radius: var(--radius); margin-bottom: 12px; }
+  .faq summary { list-style: none; cursor: pointer; padding: 16px 44px 16px 48px; position: relative; font-weight: 700; }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary::before { content: "Q"; position: absolute; left: 18px; top: 14px; color: var(--accent); font-weight: 800; font-size: 18px; font-family: var(--serif); }
+  .faq summary::after { content: "+"; position: absolute; right: 18px; top: 12px; font-size: 22px; color: var(--ink-sub); }
+  .faq details[open] summary::after { content: "−"; }
+  .faq .a { padding: 0 18px 16px 48px; position: relative; color: var(--ink-sub); font-size: 15px; }
+  .faq .a::before { content: "A"; position: absolute; left: 18px; top: -2px; color: var(--ink); font-weight: 800; font-size: 18px; font-family: var(--serif); }
+  .faq .a p { margin: 0; }
+
+  /* Form */
+  .form-card { background: #fff; border-radius: var(--radius); padding: 22px 18px; }
+  .form-intro { font-size: 14px; color: var(--ink-sub); margin: 0 0 18px; }
+  .field { margin-bottom: 20px; }
+  .field > label, .field > .label { display: block; font-weight: 700; margin-bottom: 6px; font-size: 15px; }
+  .req, .opt-badge { font-size: 11px; border-radius: 4px; padding: 1px 6px; margin-left: 6px; vertical-align: 2px; font-weight: 700; }
+  .req { background: var(--accent); color: #fff; }
+  .opt-badge { background: var(--cream); color: var(--ink-sub); border: 1px solid var(--line); }
+  .hint { display: block; font-size: 12px; color: var(--ink-sub); margin-top: 4px; }
+  input[type="text"], input[type="email"], input[type="tel"], textarea {
+    width: 100%; font-size: 16px; /* 16px+ prevents iOS zoom */
+    padding: 12px 14px; border: 1px solid #d6d0c6; border-radius: 10px; background: #fff; color: var(--ink);
+    font-family: inherit; -webkit-appearance: none; appearance: none;
+  }
+  textarea { min-height: 110px; resize: vertical; }
+  input:focus, textarea:focus { outline: 2px solid var(--accent); outline-offset: 1px; border-color: transparent; }
+  .radios { display: grid; gap: 8px; }
+  .radios label, .consent label {
+    display: flex; align-items: center; gap: 10px; border: 1px solid #d6d0c6; border-radius: 10px;
+    padding: 12px 14px; cursor: pointer; font-weight: 400;
+  }
+  .radios input, .consent input { width: 20px; height: 20px; accent-color: var(--accent); flex-shrink: 0; margin: 0; }
+  .consent label { align-items: flex-start; font-size: 14px; line-height: 1.6; }
+  .consent input { margin-top: 2px; }
+  .field.has-error input[type="text"], .field.has-error input[type="email"], .field.has-error input[type="tel"],
+  .field.has-error .radios label, .field.has-error.consent label { border-color: var(--error); background: #fff7f7; }
+  .err { display: none; color: var(--error); font-size: 13px; margin-top: 6px; font-weight: 700; }
+  .field.has-error .err { display: block; }
+  .form-msg { margin: 0 0 14px; padding: 12px 14px; border-radius: 10px; background: #fff3f0; color: var(--error); font-size: 14px; font-weight: 700; display: none; }
+  .form-msg.is-show { display: block; }
+  .closed-msg { text-align: center; padding: 18px; background: var(--cream); border-radius: 10px; font-weight: 700; }
+  .dm-box { margin-top: 20px; background: var(--paper); border: 1px dashed var(--line); border-radius: var(--radius); padding: 18px; text-align: center; }
+  .dm-box p { margin: 0; font-size: 14px; color: var(--ink-sub); }
+  .dm-box p strong { color: var(--ink); }
+  .test-banner {
+    position: sticky; top: 0; z-index: 60; background: #ffd84d; color: #1b2320;
+    text-align: center; font-size: 13px; font-weight: 700; padding: 6px 12px;
+  }
+  /* Honeypot: hidden from people, visible to bots */
+  .hp { position: absolute !important; left: -9999px !important; width: 1px; height: 1px; overflow: hidden; }
+
+  /* Footer */
+  footer { background: var(--ink); color: #dfe3e1; padding: 32px 0 28px; font-size: 13px; text-align: center; }
+  footer .org { font-size: 14px; font-weight: 700; color: #fff; margin: 0 0 6px; }
+  footer a { color: #fff; }
+  footer p { margin: 4px 0; }
+
+  @media (min-width: 768px) {
+    .hero h1 { font-size: 42px; }
+    h2 { font-size: 28px; }
+  }
+  @media (max-width: 360px) {
+    .hero h1 { font-size: 27px; }
+  }
+</style>
+</head>
+<body>
+<div class="test-banner" id="test-banner" hidden>テスト中のページです（申込はテストとして記録されます）</div>
+
+<header class="site-head">
+  <div class="wrap">
+    <span class="org">主催：<b>株式会社Beauty Grow</b></span>
+  </div>
+</header>
+
+<main>
+  <!-- 1. First view (headline / lead / tags switch by utm_content=a|b|c to match the ad) -->
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="wrap">
+      <p class="eyebrow"><span>美容師のための AI実践講習</span></p>
+      <h1 id="hero-title">閉店後のPC作業、<br><mark>AIに任せて</mark>帰ろう。</h1>
+      <p class="lead" id="hero-lead">ブログ掲載、クーポン更新、口コミ返信。閉店後に残りがちな入力作業を、AIに任せるやり方を持ち帰れます。</p>
+
+      <!-- Illustration of what AI does (not a real screen). Text switches with the ad variant. -->
+      <div class="mock" aria-label="AIが下書きを作る画面のイメージ">
+        <div class="mock-bar"><i></i><i></i><i></i><span id="mock-title">口コミへの返信をAIが下書き</span></div>
+        <div class="mock-body">
+          <div class="mock-in" id="mock-in">口コミ：カットもカラーも大満足です！また伺います。</div>
+          <div class="mock-out"><b id="mock-label">AIの下書き</b><span id="mock-out">うれしいお言葉ありがとうございます！カラーの色味も気に入っていただけてよかったです。次回もお待ちしています。</span></div>
+          <span class="mock-ok" id="mock-ok">確認して送信</span>
+        </div>
+        <p class="mock-cap">※画面はイメージです</p>
+      </div>
+
+      <ul class="tags" id="hero-tags">
+        <li>口コミ・LINEの返信下書き</li>
+        <li>HPBブログ・スタイル掲載</li>
+        <li>売上・指名数の振り返り</li>
+        <li>施術の合間にスマホで確認</li>
+      </ul>
+
+      <div class="event-box">
+        <p class="date">12月1日（火）19:00〜21:00</p>
+        <ul>
+          <li>会場：Beauty Grow本社（予定）<span class="addr">東京都港区南青山1-15-9 第45興和ビル 8F</span></li>
+          <li>スタイリスト限定・定員10名（先着順）</li>
+          <li class="seats" id="seats-left" hidden></li>
+          <li>参加無料・終了後に懇親会あり（任意参加）</li>
+          <li class="fee-note">※ClaudeのProプラン料金（月額3,500円程度）のみ自己負担です（加入済みの方は不要）。</li>
+        </ul>
+      </div>
+
+      <p class="scissors">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#2f6b5a" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M8.1 8.1 20 20M8.1 15.9 20 4"/></svg>
+        <span>サロンワークの「すき間時間」で使えるやり方だけ、持ち帰れます。</span>
+      </p>
+
+      <div class="apply-box">
+        <p class="apply-title">お申し込み</p>
+        <p class="apply-sub">お申し込み方法は、次の2つから選べます</p>
+        <a class="btn js-cta" href="#apply">① フォームで申し込む<small>入力1分</small></a>
+        <a class="btn-line js-dm" href="#" target="_blank" rel="noopener" hidden>② InstagramのDMで申し込む</a>
+        <p class="dm-howto js-dm" hidden>DMより「AIイベントに参加希望」と送信ください</p>
+      </div>
+      <p class="host-note">主催：株式会社Beauty Grow（直営70店舗の美容室を運営）</p>
+    </div>
+  </section>
+
+  <!-- 2. Cases (in-house results; order follows utm_content) -->
+  <section class="paper" aria-labelledby="sec-cases">
+    <div class="wrap">
+      <span class="sec-label">CASE</span>
+      <h2 id="sec-cases">Beauty Growの現場で、<br>実際に変わったこと</h2>
+      <p class="sec-lead">講習で扱うのは、私たちが自社のサロンで<br>使って、効果があったやり方だけです。</p>
+
+      <!-- PROVISIONAL: draft comments. Replace with each person's own words (and confirm photo consent) before going live. -->
+      <article class="staff" data-staff="takahashi">
+        <div class="who">
+          <img src="images/staff-takahashi.png" width="182" height="257" alt="高橋さんの写真" loading="lazy">
+          <div>
+            <span class="tag">店長の事務・振り返り</span>
+            <p class="name">高橋さん</p>
+            <p class="role">CELESTE 石神井公園店・川口店 店長</p>
+          </div>
+        </div>
+        <h3>「2店舗分の数字の振り返りが、AIで数分で終わるようになりました。」</h3>
+        <p class="detail">空いた時間はスタッフとの面談に。業務効率化だけでなく、マネージメントも上手くいくようになりました。</p>
+      </article>
+
+      <article class="staff" data-staff="kato">
+        <div class="who">
+          <img src="images/staff-kato.jpg" width="230" height="230" alt="加藤さんの写真" loading="lazy">
+          <div>
+            <span class="tag">1on1・会議資料の作成</span>
+            <p class="name">加藤さん</p>
+            <p class="role">CELESTE 葛西店 サロンマネージャー</p>
+          </div>
+        </div>
+        <h3>「1on1や会議の資料づくりをAIに任せたら、時間が減って、精度も上がりました。」</h3>
+        <p class="detail">売上データや記録をAIに読み込ませて下書き。論点の抜けや数字の見落としが減りました。</p>
+      </article>
+
+      <article class="staff" data-staff="yajima">
+        <div class="who">
+          <img src="images/staff-yajima.png" width="144" height="256" alt="矢島さんの写真" loading="lazy">
+          <div>
+            <span class="tag">口コミ・LINEの返信</span>
+            <p class="name">矢島さん</p>
+            <p class="role">アイラッシュ統括マネージャー</p>
+          </div>
+        </div>
+        <h3>「口コミ返信は、AIの下書きを直すだけになりました。」</h3>
+        <p class="detail">サロンの言葉づかいで下書きが届くので、確認してひとこと足すだけ。送信は自分で行います。</p>
+      </article>
+      <div class="mid-cta"><a class="btn js-cta" href="#apply">無料で申し込む<small>※Claude Pro料金のみ自己負担</small></a></div>
+      <p class="provisional" id="cases-provisional">※社内確認用の仮のコメントです（本人確認後に差し替え）</p>
+    </div>
+  </section>
+
+  <!-- 3. About -->
+  <section aria-labelledby="sec-about">
+    <div class="wrap">
+      <span class="sec-label">ABOUT</span>
+      <h2 id="sec-about">AI講習で、なにが<br>できるようになる？</h2>
+      <p class="sec-lead">「AIってすごいらしい」で終わらせず、<br>サロンの仕事のどこで、どう使うかまで落とし込みます。</p>
+
+      <ul class="learn">
+        <li><span class="merit">お客様へのLINE返信や口コミ返信の下書きをAIが用意。自分は確認して送るだけ</span><span class="what">チャットツールの内容を読み込む（送信は人）</span></li>
+        <li><span class="merit">ブログやスタイル写真の掲載、クーポン更新などの入力作業をAIが代行</span><span class="what">AIがブラウザを操作（HPB・サロンボード）</span></li>
+        <li><span class="merit">自分の売上・指名数・再来率をAIがまとめ、振り返りが数分で終わる</span><span class="what">GoogleスプレッドシートまたはExcel連携</span></li>
+        <li><span class="merit">自分のスタイルやメニューなどをWEBページにまとめて、発信できる</span><span class="what">WEBページを公開して第三者に共有する</span></li>
+      </ul>
+      <p class="more-label">ほかにも、こんなことができます</p>
+      <ul class="more">
+        <li>会社の手順書をAIに持たせ、新人教育やカウンセリングに活用</li>
+        <li>施術の合間に、スマホで確認・承認</li>
+        <li>作業を並行で走らせ、同時にいくつも片づける</li>
+      </ul>
+
+      <h3 class="sub-h">当日の流れ</h3>
+      <ol class="flow">
+        <li><h3>AIで、サロンの仕事はどこまで変わる？</h3><p>Beauty Growの現場で実際に使っている画面を見ながら、できること・できないことを整理します。</p></li>
+        <li><h3>講師が目の前で実演</h3><p>口コミ返信の下書き、HPBへの掲載、売上の振り返りを、その場でAIに任せてみせます。</p></li>
+        <li><h3>自分の仕事で、いっしょに試す</h3><p>あなたが毎日やっている作業を1つ選んで、AIへの任せ方を考えます。質問はいつでもどうぞ。</p></li>
+        <li><h3>懇親会<span class="opt">任意参加</span></h3><p>参加者どうしや講師と、ざっくばらんに話せる時間です。</p></li>
+      </ol>
+
+      <h3 class="sub-h">参加までの準備は、2つだけ</h3>
+      <div class="prep">
+        <ol>
+          <li><b>ClaudeのProプランに加入する</b><span>Claude（クロード）は、ChatGPTのように会話しながら仕事を手伝ってくれるAIです。加入の手順は、参加が確定した方にメールでお送りします（月額3,500円程度。加入済みの方は不要）。</span></li>
+          <li><b>スマートフォンとパソコンを持ってくる</b><span>パソコンはMac・Windowsどちらでも大丈夫です。特別なITの知識はいりません。</span></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Instructor & organizer -->
+  <section class="paper" aria-labelledby="sec-instructor">
+    <div class="wrap">
+      <span class="sec-label">INSTRUCTOR</span>
+      <h2 id="sec-instructor">なぜ、美容室の代表が<br>自分で教えるのか</h2>
+      <p class="sec-lead">講師は、外部のITの専門家ではありません。<br>美容室を経営する、Beauty Growの代表です。</p>
+
+      <div class="profile">
+        <div class="head">
+          <img src="images/instructor-saito.png" width="118" height="154" alt="講師 齋藤 光司の写真">
+          <div>
+            <p class="role">講師｜株式会社Beauty Grow 代表<br>直営70店舗の美容室を運営</p>
+            <p class="name">齋藤 光司</p>
+          </div>
+        </div>
+        <!-- PROVISIONAL: draft comment. Replace with the instructor's own words before going live. -->
+        <div class="comment">
+          <p>「AIの講習なのに、なぜ美容室の社長が？」と思われるかもしれません。私自身が毎日AIを使ってサロンの運営を回していて、現場で本当に使える場面を知っているからです。</p>
+          <p>AIで効率化して空いた時間で、もっとお客様に向き合ってほしい。そして売上も伸ばして、みんなが無理なく稼げる環境をつくりたい。それが、この講習を自分で開く一番の理由です。</p>
+        </div>
+        <p class="provisional" id="comment-provisional">※社内確認用の仮のコメントです（本人確認後に差し替え）</p>
+      </div>
+      <div class="mid-cta"><a class="btn js-cta" href="#apply">無料で申し込む<small>※Claude Pro料金のみ自己負担</small></a></div>
+
+      <h3 class="sub-h">主催者について</h3>
+      <table class="info">
+        <tbody>
+          <tr><th scope="row">会社名</th><td>株式会社Beauty Grow</td></tr>
+          <tr><th scope="row">代表</th><td>齋藤 光司</td></tr>
+          <tr><th scope="row">事業内容</th><td>美容室の運営（直営70店舗）</td></tr>
+          <tr><th scope="row">所在地</th><td>東京都港区南青山1-15-9 第45興和ビル 8F</td></tr>
+          <tr><th scope="row">公式サイト</th><td><a href="https://beautygrow.co.jp/" target="_blank" rel="noopener">beautygrow.co.jp</a></td></tr>
+          <tr class="js-ig-row" hidden><th scope="row">Instagram</th><td><a class="js-ig-link" href="#" target="_blank" rel="noopener"></a></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- 5. Overview -->
+  <section aria-labelledby="sec-overview">
+    <div class="wrap">
+      <span class="sec-label">OVERVIEW</span>
+      <h2 id="sec-overview">開催概要</h2>
+      <table class="info">
+        <tbody>
+          <tr><th scope="row">講習名</th><td>美容師のためのAI実践講習</td></tr>
+          <tr><th scope="row">日時</th><td>12月1日（火）19:00〜21:00<small>終了後に懇親会（任意参加）</small></td></tr>
+          <tr><th scope="row">会場</th><td>Beauty Grow本社（予定）<small>東京都港区南青山1-15-9 第45興和ビル 8F</small><small>参加人数に応じて変更する場合があります。お申し込みの方にご連絡します</small></td></tr>
+          <tr><th scope="row">対象</th><td>美容師スタイリスト限定<small>店長・スタイリストの方</small></td></tr>
+          <tr><th scope="row">定員</th><td>10名（先着順）</td></tr>
+          <tr><th scope="row">参加費</th><td>無料<span class="fee-note" style="display:block">※ClaudeのProプラン料金（月額3,500円程度）のみ自己負担です（加入済みの方は不要）。</span><small>加入は講習の前にお願いします。参加が確定した方に、案内メールをお送りします。</small></td></tr>
+          <tr><th scope="row">持ち物</th><td>スマートフォン、パソコン<small>パソコンはMac・Windowsどちらでも可</small></td></tr>
+          <tr><th scope="row">講師</th><td>齋藤 光司（株式会社Beauty Grow 代表）</td></tr>
+          <tr><th scope="row">申込締切</th><td>11月30日（月）<small>定員になり次第、締め切ります</small></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- 6. FAQ -->
+  <section class="paper faq" aria-labelledby="sec-faq">
+    <div class="wrap">
+      <span class="sec-label">FAQ</span>
+      <h2 id="sec-faq">よくある質問</h2>
+      <details>
+        <summary>なぜ無料で開催するのですか？</summary>
+        <div class="a"><p>AIで美容師の働き方を変える取り組みを、自社の中だけでなく業界に広げたいと考えているからです。主催のBeauty Growを知っていただく機会でもあります。</p></div>
+      </details>
+      <details>
+        <summary>AIを使ったことがなくても大丈夫ですか？</summary>
+        <div class="a"><p>大丈夫です。AIで何ができるのかという基本から始めます。操作もその場でいっしょに進めます。</p></div>
+      </details>
+      <details>
+        <summary>本当に無料ですか？あとから費用はかかりませんか？</summary>
+        <div class="a"><p>講習の参加費は無料です。ただし、当日AI（Claude Code）を使うため、「Claude」のProプラン（月額約3,500円・米ドル建てのため為替により変動）への加入が必要で、その料金のみ自己負担になります。すでに加入済みの方は追加費用はかかりません。加入方法は、参加確定後の案内メールでお知らせします。このほかに、講習の中で有料のサービスや商材を販売することはありません。</p></div>
+      </details>
+      <details>
+        <summary>パソコンは必要ですか？</summary>
+        <div class="a"><p>はい、スマートフォンとパソコンの両方をお持ちください。パソコンはMac・Windowsのどちらでも大丈夫です。</p></div>
+      </details>
+      <details>
+        <summary>勧誘はありますか？</summary>
+        <div class="a"><p>講習のあとの懇親会（任意参加）で、主催の株式会社Beauty Growについて少しご紹介する時間があります。懇親会への参加は自由です。</p></div>
+      </details>
+      <details>
+        <summary>アシスタントでも参加できますか？</summary>
+        <div class="a"><p>今回はスタイリストの方限定です。アシスタント向けの回も検討していますので、InstagramのDMでお気軽にお知らせください。</p></div>
+      </details>
+      <details>
+        <summary>勤務先のサロンに知られずに参加できますか？</summary>
+        <div class="a"><p>はい。ご入力の情報を、勤務先のサロンに伝えることはありません。勤務先サロン名の入力も任意です。</p></div>
+      </details>
+    </div>
+  </section>
+
+  <!-- 7. Form -->
+  <section id="apply" aria-labelledby="sec-apply">
+    <div class="wrap">
+      <span class="sec-label">ENTRY</span>
+      <h2 id="sec-apply">お申し込み</h2>
+      <p class="sec-lead">定員10名・先着順です。<br>下のフォーム、またはInstagramのDMから申し込めます。</p>
+
+      <div class="form-card">
+        <p class="form-intro">送信後、ご入力のメールアドレスに確認メールをお送りします。</p>
+
+        <div class="closed-msg" id="closed-msg" hidden>お申し込みの受付は終了しました。</div>
+
+        <form id="entry-form" novalidate>
+          <p class="form-msg" id="form-msg" role="alert"></p>
+
+          <div class="field" data-field="name">
+            <label for="f-name">お名前<span class="req">必須</span></label>
+            <input type="text" id="f-name" name="name" autocomplete="name" maxlength="50" placeholder="例）美容 花子" required>
+            <p class="err">お名前を入力してください</p>
+          </div>
+
+          <div class="field" data-field="kana">
+            <label for="f-kana">フリガナ<span class="opt-badge">任意</span></label>
+            <input type="text" id="f-kana" name="kana" maxlength="50" placeholder="例）ビヨウ ハナコ">
+            <p class="err">フリガナをカタカナで入力してください</p>
+          </div>
+
+          <div class="field" data-field="email">
+            <label for="f-email">メールアドレス<span class="req">必須</span></label>
+            <input type="email" id="f-email" name="email" autocomplete="email" inputmode="email" maxlength="254" placeholder="例）hanako@example.com" required>
+            <span class="hint">確認メールをお送りします</span>
+            <p class="err">メールアドレスの形式が正しくありません</p>
+          </div>
+
+          <div class="field" data-field="tel">
+            <label for="f-tel">電話番号<span class="req">必須</span></label>
+            <input type="tel" id="f-tel" name="tel" autocomplete="tel" inputmode="tel" maxlength="20" placeholder="例）090-1234-5678" required>
+            <span class="hint">当日の急な連絡にのみ使います</span>
+            <p class="err">電話番号を正しく入力してください（ハイフンあり・なし、どちらでも可）</p>
+          </div>
+
+          <div class="field" data-field="position">
+            <span class="label" id="l-position">現在のお立場<span class="req">必須</span></span>
+            <div class="radios" role="radiogroup" aria-labelledby="l-position">
+              <label><input type="radio" name="position" value="店長">店長</label>
+              <label><input type="radio" name="position" value="スタイリスト">スタイリスト</label>
+            </div>
+            <span class="hint">本講習は美容師スタイリストの方限定です</span>
+            <p class="err">お立場を選んでください</p>
+          </div>
+
+          <div class="field" data-field="salon">
+            <label for="f-salon">勤務先サロン名<span class="opt-badge">任意</span></label>
+            <input type="text" id="f-salon" name="salon" autocomplete="organization" maxlength="100" placeholder="例）〇〇 hair 〇〇店">
+          </div>
+
+          <div class="field" data-field="question">
+            <label for="f-question">AIに任せたい作業・聞きたいこと<span class="opt-badge">任意</span></label>
+            <textarea id="f-question" name="question" maxlength="1000" placeholder="例）口コミ返信に毎回時間がかかっています"></textarea>
+            <span class="hint">いただいた内容は、当日の実演の参考にします</span>
+          </div>
+
+          <!-- Honeypot (bots fill this, people never see it) -->
+          <div class="hp" aria-hidden="true">
+            <label for="f-website">Website</label>
+            <input type="text" id="f-website" name="website" tabindex="-1" autocomplete="off">
+          </div>
+
+          <!-- Hidden: tracking and timestamp -->
+          <input type="hidden" name="utm_source">
+          <input type="hidden" name="utm_medium">
+          <input type="hidden" name="utm_campaign">
+          <input type="hidden" name="utm_content">
+          <input type="hidden" name="applied_at">
+          <input type="hidden" name="test">
+
+          <div class="field consent" data-field="consent">
+            <label>
+              <input type="checkbox" name="consent" value="同意する">
+              <span><a href="privacy.html" target="_blank" rel="noopener">個人情報の取り扱い</a>に同意します。ご入力の情報は、本講習の運営・ご連絡と、株式会社Beauty Growからの今後のイベント等のご案内（求人のご案内を含む場合があります）に利用します。</span>
+            </label>
+            <p class="err">内容をご確認のうえ、チェックを入れてください</p>
+          </div>
+
+          <button type="submit" class="btn" id="submit-btn">この内容で申し込む</button>
+        </form>
+      </div>
+
+      <div class="dm-box js-dm-box" hidden>
+        <p><strong>フォームが面倒な方は、InstagramのDMでもOK</strong><br>DMより「AIイベントに参加希望」と送信ください。</p>
+        <a class="btn-line js-dm" href="#" target="_blank" rel="noopener">InstagramのDMで申し込む</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- 8. Footer -->
+<footer>
+  <div class="wrap">
+    <p class="org">主催：株式会社Beauty Grow</p>
+    <p><a href="https://beautygrow.co.jp/" target="_blank" rel="noopener">公式サイト</a>　｜　<a href="privacy.html">プライバシーポリシー</a></p>
+    <p>&copy; Beauty Grow Inc.</p>
+  </div>
+</footer>
+
+<!-- Sticky CTA -->
+<div class="sticky-cta" id="sticky-cta">
+  <div class="wrap">
+    <a class="btn js-cta" href="#apply">無料で申し込む<small>※Claude Pro料金のみ自己負担</small></a>
+  </div>
+</div>
+
+<script>
+(function () {
+  'use strict';
+
+  /* ===== Settings (replace the 【 】 values before going live) ===== */
+  var CONFIG = {
+    testMode: window.LP_TEST_MODE === true, // switch at the top of <head>
+    // GAS web app URL: https://script.google.com/macros/s/xxxx/exec
+    endpoint: '【GASのURL】',
+    // Application deadline (Japan time). Form closes automatically after this.
+    deadline: '2026-11-30T23:59:59+09:00', // keep in sync with the overview table and gas/Code.gs
+    thanksUrl: 'thanks.html',
+    // Seats left, updated by hand (e.g. 3). Leave null to hide.
+    seatsLeft: null,
+    // Recruit Instagram account (without @). DM buttons stay hidden until this is set.
+    instagramId: 'beautygrow_recruit'
+  };
+
+  /* ===== First view per ad creative (utm_content=a|b|c). Text only, inserted with textContent. ===== */
+  var VARIANTS = {
+    a: {
+      h1: ['閉店後のPC作業、', 'AIに任せて', '帰ろう。'],
+      lead: 'ブログ掲載、クーポン更新、口コミ返信。閉店後に残りがちな入力作業を、AIに任せるやり方を持ち帰れます。',
+      tags: ['口コミ・LINEの返信下書き', 'HPBブログ・スタイル掲載', '売上・指名数の振り返り', '施術の合間にスマホで確認']
+    },
+    b: {
+      h1: ['口コミ返信も、投稿文も。', '下書きはAIに', 'まかせる。'],
+      lead: '毎回ゼロから考えていた文章は、AIが下書き。あなたは確認して、ひとこと直すだけ。そのやり方を、当日その場で試します。',
+      tags: ['口コミ・LINEの返信下書き', 'HPBブログ・スタイル掲載', '売上・指名数の振り返り', '施術の合間にスマホで確認']
+    },
+    c: {
+      h1: ['店長の事務仕事、', '半分AIに', '渡そう。'],
+      lead: '売上の振り返り、シフトやスタッフ連絡の整理。月末に積み上がる事務作業をAIに渡して、スタッフと話す時間をつくる方法をお伝えします。',
+      tags: ['口コミ・LINEの返信下書き', 'HPBブログ・スタイル掲載', 'シフト・スタッフ連絡の整理', '施術の合間にスマホで整理'],
+      mock: {
+        title: '今月の振り返りをAIがまとめる',
+        label: 'AIのまとめ',
+        ok: '確認してOK',
+        input: '指示：今月の売上・指名数・再来率を、スタイリストごとにまとめて',
+        output: 'スタイリスト別の表にまとめました。再来率がいちばん伸びたのは〇〇さんです。新規のお客様への次回提案を、ミーティングの議題にしませんか？'
+      }
+    }
+  };
+
+  var form = document.getElementById('entry-form');
+  if (CONFIG.testMode) {
+    document.getElementById('test-banner').hidden = false;
+    form.elements.test.value = '1';
+  }
+  var btn = document.getElementById('submit-btn');
+  var msg = document.getElementById('form-msg');
+  var sticky = document.getElementById('sticky-cta');
+
+  function storage() {
+    try { return window.sessionStorage; } catch (e) { return null; }
+  }
+
+  /* ----- UTM: read from URL, keep for this session ----- */
+  var UTM_KEYS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content'];
+  var params = new URLSearchParams(location.search);
+  var ss = storage();
+  UTM_KEYS.forEach(function (key) {
+    var v = (params.get(key) || '').slice(0, 100);
+    try {
+      if (v && ss) ss.setItem(key, v);
+      if (!v && ss) v = ss.getItem(key) || '';
+    } catch (e) { /* storage blocked: use URL value only */ }
+    form.elements[key].value = v;
+  });
+
+  /* ----- Swap the first view to match the ad the visitor came from ----- */
+  var variant = VARIANTS[String(form.elements.utm_content.value).toLowerCase()];
+  if (variant) {
+    var h1 = document.getElementById('hero-title');
+    var mark = document.createElement('mark');
+    mark.textContent = variant.h1[1];
+    h1.textContent = '';
+    h1.appendChild(document.createTextNode(variant.h1[0]));
+    h1.appendChild(document.createElement('br'));
+    h1.appendChild(mark);
+    h1.appendChild(document.createTextNode(variant.h1[2]));
+    document.getElementById('hero-lead').textContent = variant.lead;
+    var tags = document.getElementById('hero-tags');
+    tags.textContent = '';
+    variant.tags.forEach(function (t) {
+      var li = document.createElement('li');
+      li.textContent = t;
+      tags.appendChild(li);
+    });
+    if (variant.mock) {
+      document.getElementById('mock-title').textContent = variant.mock.title;
+      document.getElementById('mock-in').textContent = variant.mock.input;
+      document.getElementById('mock-out').textContent = variant.mock.output;
+      document.getElementById('mock-label').textContent = variant.mock.label;
+      document.getElementById('mock-ok').textContent = variant.mock.ok;
+    }
+  }
+
+  /* ----- Seats left (shown only when set) ----- */
+  if (typeof CONFIG.seatsLeft === 'number' && CONFIG.seatsLeft >= 0) {
+    var seats = document.getElementById('seats-left');
+    seats.textContent = CONFIG.seatsLeft > 0 ? '残り' + CONFIG.seatsLeft + '席' : '満席（キャンセル待ちで受付中）';
+    seats.hidden = false;
+  }
+
+  /* ----- Staff voices: show the person closest to the ad first ----- */
+  var FIRST_STAFF = { a: 'yajima', b: 'yajima', c: 'takahashi' };
+  var firstKey = FIRST_STAFF[String(form.elements.utm_content.value).toLowerCase()] || 'yajima';
+  var firstCard = document.querySelector('[data-staff="' + firstKey + '"]');
+  var firstOfAll = document.querySelector('[data-staff]');
+  if (firstCard && firstOfAll && firstCard !== firstOfAll) firstOfAll.parentNode.insertBefore(firstCard, firstOfAll);
+
+  /* ----- Instagram DM links (hidden until a valid account ID is set) ----- */
+  if (/^[A-Za-z0-9._]{1,30}$/.test(CONFIG.instagramId)) {
+    var dmUrl = 'https://www.instagram.com/' + CONFIG.instagramId + '/'; // profile page opens without login; ig.me/m needs login
+    Array.prototype.forEach.call(document.querySelectorAll('.js-dm'), function (a) {
+      if (a.tagName === 'A') a.href = dmUrl;
+      a.hidden = false;
+    });
+    Array.prototype.forEach.call(document.querySelectorAll('.js-dm-box, .js-ig-row'), function (el) { el.hidden = false; });
+    var igLink = document.querySelector('.js-ig-link');
+    igLink.href = 'https://www.instagram.com/' + CONFIG.instagramId + '/';
+    igLink.textContent = '@' + CONFIG.instagramId;
+  }
+
+  /* ----- Close the form after the deadline ----- */
+  var isClosed = Date.now() > new Date(CONFIG.deadline).getTime();
+  if (isClosed) {
+    form.hidden = true;
+    document.getElementById('closed-msg').hidden = false;
+    Array.prototype.forEach.call(document.querySelectorAll('.js-cta'), function (a) {
+      a.classList.add('is-closed');
+      a.textContent = '受付は終了しました';
+    });
+    Array.prototype.forEach.call(document.querySelectorAll('.js-dm, .js-dm-box'), function (el) { el.hidden = true; });
+  }
+
+  /* ----- Hide sticky CTA while the form is on screen ----- */
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) { sticky.classList.toggle('is-hidden', en.isIntersecting); });
+    }, { threshold: 0.05 }).observe(document.getElementById('apply'));
+  }
+
+  /* ----- Validation ----- */
+  function toHalfWidth(s) {
+    return s.replace(/[０-９＠．－＋]/g, function (c) { return String.fromCharCode(c.charCodeAt(0) - 0xFEE0); })
+            .replace(/[ー―‐−]/g, '-');
+  }
+  function hiraToKata(s) {
+    return s.replace(/[ぁ-ゖ]/g, function (c) { return String.fromCharCode(c.charCodeAt(0) + 0x60); });
+  }
+  var EMAIL_RE = /^[A-Za-z0-9._%+\-]+@[A-Za-z0-9\-]+(\.[A-Za-z0-9\-]+)*\.[A-Za-z]{2,}$/;
+  var KANA_RE = /^[゠-ヿ\s　]+$/;
+
+  function setError(name, hasError) {
+    var el = form.querySelector('[data-field="' + name + '"]');
+    if (el) el.classList.toggle('has-error', hasError);
+    return !hasError;
+  }
+
+  function validate() {
+    var f = form.elements;
+    // Normalize before checking
+    f.name.value = f.name.value.trim();
+    f.kana.value = hiraToKata(f.kana.value.trim());
+    f.email.value = toHalfWidth(f.email.value.trim());
+    f.tel.value = toHalfWidth(f.tel.value.trim());
+
+    var telDigits = f.tel.value.replace(/[\s\-()]/g, '');
+    var checks = [
+      setError('name', f.name.value === ''),
+      setError('kana', f.kana.value !== '' && !KANA_RE.test(f.kana.value)),
+      setError('email', !EMAIL_RE.test(f.email.value)),
+      setError('tel', !/^0\d{9,10}$/.test(telDigits)),
+      setError('position', !form.querySelector('input[name="position"]:checked')),
+      setError('consent', !f.consent.checked)
+    ];
+    return checks.every(Boolean);
+  }
+
+  // Clear the error mark as soon as the user fixes a field
+  form.addEventListener('input', function (e) {
+    var field = e.target.closest('.field');
+    if (field) field.classList.remove('has-error');
+  });
+  form.addEventListener('change', function (e) {
+    var field = e.target.closest('.field');
+    if (field) field.classList.remove('has-error');
+  });
+
+  function showMsg(text) {
+    msg.textContent = text;
+    msg.classList.add('is-show');
+    msg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+
+  /* ----- Submit ----- */
+  var sending = false;
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    if (sending || isClosed) return;
+    msg.classList.remove('is-show');
+
+    if (!validate()) {
+      showMsg('入力内容をご確認ください。');
+      var first = form.querySelector('.has-error input, .has-error textarea');
+      if (first) first.focus({ preventScroll: true });
+      return;
+    }
+    if (!/^https:\/\/script\.google\.com\//.test(CONFIG.endpoint)) {
+      showMsg('現在、送信先の設定中です。時間をおいて再度お試しください。');
+      return;
+    }
+
+    sending = true;
+    btn.disabled = true;
+    btn.textContent = '送信中です…';
+
+    form.elements.applied_at.value = new Date().toLocaleString('ja-JP', { timeZone: 'Asia/Tokyo' });
+
+    fetch(CONFIG.endpoint, {
+      method: 'POST',
+      mode: 'no-cors',
+      body: new URLSearchParams(new FormData(form))
+    }).then(function () {
+      // Flag for thanks.html to send the Lead event once (no personal data stored)
+      try { sessionStorage.setItem('ai_lp_submitted', '1'); } catch (err) {}
+      location.href = CONFIG.thanksUrl;
+    }).catch(function () {
+      sending = false;
+      btn.disabled = false;
+      btn.textContent = 'この内容で申し込む';
+      showMsg('送信できませんでした。通信状況をご確認のうえ、もう一度お試しください。');
+    });
+  });
+})();
+</script>
+</body>
+</html>
