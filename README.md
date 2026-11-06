@@ -8,9 +8,9 @@
 `utm_content` の値で、見出し・リード文・スタッフの声・タグが変わる。文言は index.html の `VARIANTS` で直す。値がない・違うときはA案の表示になる。
 
 ```
-A 閉店後のPC作業     https://kakiuchi-ops.github.io/ai-event-lp/?utm_source=meta&utm_medium=paid&utm_campaign=ai1201&utm_content=a
-B 口コミ返信・投稿文 https://kakiuchi-ops.github.io/ai-event-lp/?utm_source=meta&utm_medium=paid&utm_campaign=ai1201&utm_content=b
-C 店長の事務仕事     https://kakiuchi-ops.github.io/ai-event-lp/?utm_source=meta&utm_medium=paid&utm_campaign=ai1201&utm_content=c
+A 閉店後のPC作業     https://beautygrow-lp.github.io/ai-event-lp/?utm_source=meta&utm_medium=paid&utm_campaign=ai1201&utm_content=a
+B 口コミ返信・投稿文 https://beautygrow-lp.github.io/ai-event-lp/?utm_source=meta&utm_medium=paid&utm_campaign=ai1201&utm_content=b
+C 店長の事務仕事     https://beautygrow-lp.github.io/ai-event-lp/?utm_source=meta&utm_medium=paid&utm_campaign=ai1201&utm_content=c
 ```
 
 - スプレッドシートの「utm_content」列・担当者あての通知メールで、どの広告から来た申込かがわかる
@@ -44,7 +44,7 @@ gas/Code.gs   申込の受け口（GitHubには載せない。.gitignore で除�
 | 【ピクセルID】 | index.html・thanks.html | Meta広告の担当者 |
 | 【GASのURL】 | index.html の CONFIG | 手順3で発行 |
 | テストモードのスイッチ `window.LP_TEST_MODE` | index.html の `<head>` 先頭 | 公開前は `true`、告知開始前に `false`（手順4） |
-| 【公開URL】（og:url・og:image） | index.html | 手順4で決まる `https://kakiuchi-ops.github.io/ai-event-lp` |
+| 【公開URL】（og:url・og:image） | index.html | 手順4で決まる `https://beautygrow-lp.github.io/ai-event-lp` |
 | 【問い合わせ先メールアドレス】 | privacy.html・gas/Code.gs | 総務／運営チーム |
 | 【会社所在地】【制定日】 | privacy.html | 総務（正式版に差し替えるなら不要） |
 
@@ -142,7 +142,7 @@ window.LP_TEST_MODE = false;  // 本番
 ### テストの流れ
 1. 手順3でGASを用意し、index.html に GASのURL・ピクセルID・公開URL を入れる（`LP_TEST_MODE = true` のまま）
 2. 手順5で GitHub に push して Pages を有効にする
-3. iPhone・Android の実機で `https://kakiuchi-ops.github.io/ai-event-lp/?utm_source=test&utm_medium=test&utm_campaign=test` から申し込む
+3. iPhone・Android の実機で `https://beautygrow-lp.github.io/ai-event-lp/?utm_source=test&utm_medium=test&utm_campaign=test` から申し込む
    - スプレッドシートに「テスト」行が入る／Chatwork に `[TEST]` 通知が来る／`[TEST]` 件名の自動返信メールが届く
 4. Metaイベントマネージャ →（データセット）→「テストイベント」で、公開URLを開いて PageView、申込後に PageView＋Lead が届くことを確認
 5. シェアデバッガー https://developers.facebook.com/tools/debug/ に公開URLを入れ、OGP画像とタイトルを確認
@@ -165,7 +165,7 @@ git push
 ## 5. GitHub Pages への公開
 
 ### 4-1. GitHubでリポジトリを作る（ブラウザ）
-1. https://github.com/new を開く（kakiuchi-ops でログイン）
+1. https://github.com/organizations/beautygrow-lp/repositories/new を開く（組織 beautygrow-lp に作る）
 2. Repository name：`ai-event-lp`／**Public**／README などのチェックは全部外す →「Create repository」
 
 ### 4-2. push（ターミナルにコピペ）
@@ -180,14 +180,14 @@ git status
 ```
 git commit -m "Add AI event LP"
 git branch -M main
-git remote add origin https://github.com/kakiuchi-ops/ai-event-lp.git
+git remote add origin https://github.com/beautygrow-lp/ai-event-lp.git
 git push -u origin main
 ```
 
 ### 4-3. Pages を有効にする
 1. リポジトリの「Settings」→ 左メニュー「Pages」
 2. Source：「Deploy from a branch」／Branch：`main`・`/(root)` →「Save」
-3. 1〜2分で `https://kakiuchi-ops.github.io/ai-event-lp/` が公開される
+3. 1〜2分で `https://beautygrow-lp.github.io/ai-event-lp/` が公開される
 
 ### 4-4. 修正したとき
 ```
@@ -197,12 +197,18 @@ git commit -m "Update event info"
 git push
 ```
 
+### 旧URL（kakiuchi-ops）について
+2026年11月6日に、公開場所を `kakiuchi-ops/ai-event-lp` から組織 `beautygrow-lp/ai-event-lp` に移した。
+- 旧URL `https://kakiuchi-ops.github.io/ai-event-lp/` には**転送ページだけ**を置いている。`?utm_…` と `#apply` を引き継いで新URLへ移す
+- 配布済みのゆうパックDMチラシの二次元コードは旧URLを指しているため、**`kakiuchi-ops` アカウントと旧リポジトリは削除・名前変更・非公開化しない**
+- このフォルダの git は `origin` が新リポジトリ。旧リポジトリは `old-kakiuchi` として残し、push できないようにしてある（転送ページの上書き防止）
+
 ### 経路別URL（広告・投稿・LINE・DMで使い分ける）
 ```
-Meta広告   https://kakiuchi-ops.github.io/ai-event-lp/?utm_source=meta&utm_medium=paid&utm_campaign=ai1201
-Instagram  https://kakiuchi-ops.github.io/ai-event-lp/?utm_source=instagram&utm_medium=organic&utm_campaign=ai1201
-公式LINE   https://kakiuchi-ops.github.io/ai-event-lp/?utm_source=line&utm_medium=message&utm_campaign=ai1201
-DM         https://kakiuchi-ops.github.io/ai-event-lp/?utm_source=dm&utm_medium=direct&utm_campaign=ai1201
+Meta広告   https://beautygrow-lp.github.io/ai-event-lp/?utm_source=meta&utm_medium=paid&utm_campaign=ai1201
+Instagram  https://beautygrow-lp.github.io/ai-event-lp/?utm_source=instagram&utm_medium=organic&utm_campaign=ai1201
+公式LINE   https://beautygrow-lp.github.io/ai-event-lp/?utm_source=line&utm_medium=message&utm_campaign=ai1201
+DM         https://beautygrow-lp.github.io/ai-event-lp/?utm_source=dm&utm_medium=direct&utm_campaign=ai1201
 ```
 
 ---
