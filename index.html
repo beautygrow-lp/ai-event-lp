@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- ===== TEST MODE: true while checking before launch. Set to false to go live. ===== -->
 <script>
-  window.LP_TEST_MODE = true;
+  window.LP_TEST_MODE = false;
   if (window.LP_TEST_MODE) {
     var robots = document.createElement('meta');
     robots.name = 'robots';
@@ -615,7 +615,7 @@
   var CONFIG = {
     testMode: window.LP_TEST_MODE === true, // switch at the top of <head>
     // GAS web app URL: https://script.google.com/macros/s/xxxx/exec
-    endpoint: '【GASのURL】',
+    endpoint: 'https://script.google.com/macros/s/AKfycbw2oxmzJh9FUDOhiZY07MSgYgoz3Y2hfarkSY_lFvlesEzuGOV4fQ2_TgYHwzlkogbH/exec',
     // Application deadline (Japan time). Form closes automatically after this.
     deadline: '2026-11-30T23:59:59+09:00', // keep in sync with the overview table and gas/Code.gs
     thanksUrl: 'thanks.html',
@@ -643,6 +643,8 @@
     document.getElementById('test-banner').hidden = false;
     form.elements.test.value = '1';
   }
+  // ?test=1 on the live page: entry is recorded as test (not counted toward capacity), no banner
+  if (/[?&]test=1(&|$)/.test(location.search)) form.elements.test.value = '1';
   var btn = document.getElementById('submit-btn');
   var msg = document.getElementById('form-msg');
   var sticky = document.getElementById('sticky-cta');
