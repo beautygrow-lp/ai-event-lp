@@ -125,6 +125,12 @@
   .points li { display: flex; align-items: center; justify-content: center; text-align: center; padding: 14px 6px; font-weight: 700; font-size: 15px; line-height: 1.45; word-break: keep-all; overflow-wrap: anywhere; }
   .points li + li { border-left: 1px solid var(--line-on-off); }
   .points .marker { font-size: 17px; }
+  .fv-instructor { display: flex; align-items: center; gap: 14px; margin: 0 0 22px; }
+  .fv-instructor img { width: 56px; height: 70px; object-fit: cover; object-position: 50% 15%; border-radius: 0; flex-shrink: 0; }
+  .fv-instructor p { margin: 0; }
+  .fi-name { font-weight: 700; font-size: 16px; line-height: 1.5; }
+  .fi-label { font-size: 12px; color: var(--grey); margin-right: 8px; }
+  .fi-role { font-size: 13px; color: var(--grey); line-height: 1.5; word-break: keep-all; overflow-wrap: anywhere; }
 
   /* ---------- Buttons ---------- */
   .btn {
@@ -333,6 +339,13 @@
           <li>オンライン・<wbr>顔出しなし<wbr>参加OK</li>
           <li>申込特典あり</li>
         </ul>
+        <div class="fv-instructor">
+          <img src="images/instructor-saito.png" width="118" height="154" alt="講師 齋藤 光司の写真">
+          <div>
+            <p class="fi-name"><span class="fi-label">講師</span>齋藤 光司</p>
+            <p class="fi-role">美容サロン70店舗を経営する<wbr><span style="white-space:nowrap">Beauty Grow代表</span></p>
+          </div>
+        </div>
         <div class="fv-cta"><a class="btn js-cta" href="#apply">無料で参加を申し込む<small>入力1分</small></a></div>
       </div>
     </div>
