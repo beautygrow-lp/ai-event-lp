@@ -712,6 +712,13 @@
     if (scroll) document.getElementById('form-card').scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 
+  // Scroll so the form's progress bar sits just below the top edge: selected date and email field come into view
+  function scrollToFormTop() {
+    var target = document.getElementById('progress');
+    var y = target.getBoundingClientRect().top + window.pageYOffset - 16;
+    window.scrollTo({ top: y, behavior: 'smooth' });
+  }
+
   /* ----- Session buttons (first view) and radio buttons (form); past sessions are left out ----- */
   var heroSessions = document.getElementById('hero-sessions');
   var sessionRadios = document.getElementById('session-radios');
@@ -737,7 +744,7 @@
       setError('session', false);
       syncHeroButtons();
       showStep(1, false);
-      document.getElementById('apply').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      scrollToFormTop(); // land on the form itself (not the section heading / bonus above it)
     });
     heroSessions.appendChild(b);
 
@@ -789,11 +796,21 @@
   }
 
   /* ----- Hide sticky CTA while the form is on screen ----- */
-  if ('IntersectionObserver' in window) {
-    new IntersectionObserver(function (entries) {
-      entries.forEach(function (en) { sticky.classList.toggle('is-hidden', en.isIntersecting); });
-    }, { threshold: 0.05 }).observe(document.getElementById('apply'));
+  // Measured on scroll/resize (more reliable than IntersectionObserver in in-app browsers)
+  var applySection = document.getElementById('apply');
+  var stickyTicking = false;
+  function updateSticky() {
+    stickyTicking = false;
+    var r = applySection.getBoundingClientRect();
+    var vh = window.innerHeight || document.documentElement.clientHeight;
+    sticky.classList.toggle('is-hidden', r.top < vh * 0.95 && r.bottom > 0);
   }
+  function requestSticky() {
+    if (!stickyTicking) { stickyTicking = true; window.requestAnimationFrame(updateSticky); }
+  }
+  window.addEventListener('scroll', requestSticky, { passive: true });
+  window.addEventListener('resize', requestSticky);
+  updateSticky();
 
   /* ----- Validation ----- */
   function toHalfWidth(s) {
