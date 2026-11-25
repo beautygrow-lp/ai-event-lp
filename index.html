@@ -113,7 +113,8 @@
   .bubble { position: relative; background: var(--white); color: var(--navy); border-radius: 4px; padding: 14px 16px 12px; margin-top: 8px; }
   .bubble::after { content: ""; position: absolute; left: -12px; top: 24px; border: 12px solid transparent; border-left: 0; border-right-color: var(--white); } /* tail points to the photo */
   .bq { margin: 0; font-weight: 700; font-size: clamp(17px, 4.8vw, 21px); line-height: 1.5; word-break: keep-all; overflow-wrap: anywhere; }
-  .bs { margin: 6px 0 0; font-size: 12px; color: var(--grey); word-break: keep-all; overflow-wrap: anywhere; }
+  .bs { margin: 6px 0 0; font-size: clamp(10.5px, 3vw, 13px); color: var(--grey); word-break: keep-all; }
+  .bs-line { white-space: nowrap; }  /* only break after "任せて、" */
   .fv-bottom { background: var(--off); padding: 26px 0 34px; }
   .sess-title { margin: 0; font-weight: 700; font-size: 20px; }
   .tap-note { margin: 2px 0 12px; font-size: 13px; color: var(--grey); }
@@ -125,6 +126,10 @@
   .points li { display: flex; align-items: center; justify-content: center; text-align: center; padding: 14px 6px; font-weight: 700; font-size: 15px; line-height: 1.45; word-break: keep-all; overflow-wrap: anywhere; }
   .points li + li { border-left: 1px solid var(--line-on-off); }
   .points .marker { font-size: 17px; }
+  .points li.pt-bonus { grid-column: 1 / -1; border-left: 0; border-top: 1px solid var(--line-on-off); font-size: 16px; padding: 12px 6px; }
+  .points li.pt-bonus .marker { font-size: inherit; }
+  .pb-label, .pb-name { white-space: nowrap; }  /* breaks only between label and name */
+  .sess-time { margin: 2px 0 0; font-weight: 700; font-size: 14px; }
   .fv-instructor { display: flex; align-items: center; gap: 14px; margin: 0 0 22px; }
   /* Bust-up crop of the instructor photo (head and shoulders) */
   .fi-photo { position: relative; width: 56px; height: 70px; overflow: hidden; flex-shrink: 0; }
@@ -326,7 +331,7 @@
             </figure>
             <div class="bubble">
               <p class="bq">“月20時間の<wbr>店長業務が<wbr>10分に”</p>
-              <p class="bs">お客様やスタッフと<wbr>向き合う時間が<wbr>増えました！</p>
+              <p class="bs"><span class="bs-line">口コミ返信もHPB更新もAIに任せて、</span><br><span class="bs-line">早く帰れるようになりました。</span></p>
             </div>
           </div>
         </div>
@@ -335,12 +340,14 @@
     <div class="fv-bottom">
       <div class="wrap">
         <p class="sess-title">全6日程から選べます</p>
+        <p class="sess-time">各回19:00〜21:00（途中参加OK）</p>
         <p class="tap-note">日程をタップして申し込む</p>
         <div class="sess-btns" id="hero-sessions"></div>
         <ul class="points">
           <li><span class="marker">参加無料</span></li>
           <li>オンライン・<wbr>顔出しなし<wbr>参加OK</li>
-          <li>申込特典あり</li>
+          <li>途中参加OK</li>
+          <li class="pt-bonus"><span class="marker"><span class="pb-label">申込特典：</span><wbr><span class="pb-name" data-bonus="name"></span></span></li>
         </ul>
         <div class="fv-instructor">
           <span class="fi-photo"><img src="images/instructor-saito.png" width="118" height="154" alt="講師 齋藤 光司の写真"></span>
@@ -443,7 +450,7 @@
       <table class="info">
         <tbody>
           <tr><th scope="row">講習名</th><td>美容師のための業務効率化AI講習</td></tr>
-          <tr><th scope="row">日時</th><td>12月8日（火）・12月22日（火）・1月13日（水）・1月26日（火）・2月9日（火）・2月24日（水）<small>各回19:00〜21:00。同じ内容です。ご都合のよい回を1つお選びください</small></td></tr>
+          <tr><th scope="row">日時</th><td>12月8日（火）・12月22日（火）・1月13日（水）・1月26日（火）・2月9日（火）・2月24日（水）<small>各回19:00〜21:00。同じ内容です。ご都合のよい回を1つお選びください</small><small>お仕事終わりからの途中参加もOKです。</small></td></tr>
           <tr><th scope="row">参加方法</th><td>会場またはオンライン<small>オンラインは顔出し不要。参加用URLは前日までにメールでお送りします</small></td></tr>
           <tr><th scope="row">会場</th><td>Beauty Grow本社（予定）<small>東京都港区南青山1-15-9 第45興和ビル 8F</small><small>参加人数に応じて変更する場合があります。お申し込みの方にご連絡します</small></td></tr>
           <tr><th scope="row">対象</th><td>美容師スタイリスト<small>店長・マネージャーなど役職者の方におすすめです</small></td></tr>
@@ -485,7 +492,7 @@
             <div class="field" data-field="session">
               <span class="label">参加する日程<span class="req">必須</span></span>
               <div class="radios" id="session-radios"></div>
-              <span class="hint">各回19:00〜21:00・同じ内容です</span>
+              <span class="hint">各回19:00〜21:00・同じ内容です（途中参加OK）</span>
               <p class="err">参加する日程を選んでください</p>
             </div>
 
@@ -597,7 +604,7 @@
 <!-- Sticky CTA -->
 <div class="sticky-cta" id="sticky-cta">
   <div class="wrap">
-    <a class="btn js-cta" href="#apply">無料で申し込む<small>全6日程・オンラインOK</small></a>
+    <a class="btn js-cta" href="#apply">無料で申し込む<small>全6日程・途中参加OK</small></a>
   </div>
 </div>
 
