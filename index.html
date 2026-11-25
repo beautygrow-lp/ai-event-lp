@@ -288,6 +288,7 @@
   footer { background: var(--navy); color: var(--off); padding: 32px 0 28px; font-size: 13px; text-align: center; border-top: 1px solid var(--line-on-navy); }
   footer .org { font-size: 14px; font-weight: 700; margin: 0 0 6px; }
   footer p { margin: 4px 0; }
+  footer .org-detail { font-size: 12px; opacity: .8; word-break: keep-all; overflow-wrap: anywhere; }
 
   /* ---------- PC ---------- */
   @media (min-width: 900px) {
@@ -434,26 +435,8 @@
     </div>
   </section>
 
-  <!-- 4. Organizer -->
-  <section class="on-navy" aria-labelledby="sec-organizer">
-    <div class="wrap">
-      <span class="sec-label">ORGANIZER</span>
-      <h2 id="sec-organizer">主催者について</h2>
-      <table class="info">
-        <tbody>
-          <tr><th scope="row">会社名</th><td>株式会社Beauty Grow</td></tr>
-          <tr><th scope="row">代表</th><td>齋藤 光司</td></tr>
-          <tr><th scope="row">事業内容</th><td>美容室事業、アイラッシュ事業、ヘアカラー事業</td></tr>
-          <tr><th scope="row">所在地</th><td>東京都港区南青山1-15-9 第45興和ビル 8F</td></tr>
-          <tr><th scope="row">公式サイト</th><td><a href="https://beautygrow.co.jp/" target="_blank" rel="noopener">beautygrow.co.jp</a></td></tr>
-          <tr class="js-ig-row" hidden><th scope="row">Instagram</th><td><a class="js-ig-link" href="#" target="_blank" rel="noopener"></a></td></tr>
-        </tbody>
-      </table>
-    </div>
-  </section>
-
   <!-- 5. Overview -->
-  <section class="on-off" aria-labelledby="sec-overview">
+  <section class="on-navy" aria-labelledby="sec-overview">
     <div class="wrap">
       <span class="sec-label">OVERVIEW</span>
       <h2 id="sec-overview">開催概要</h2>
@@ -462,8 +445,8 @@
           <tr><th scope="row">講習名</th><td>美容師のための業務効率化AI講習</td></tr>
           <tr><th scope="row">日時</th><td>12月8日（火）・12月22日（火）・1月13日（水）・1月26日（火）・2月9日（火）・2月24日（水）<small>各回19:00〜21:00。同じ内容です。ご都合のよい回を1つお選びください</small></td></tr>
           <tr><th scope="row">参加方法</th><td>会場またはオンライン<small>オンラインは顔出し不要。参加用URLは前日までにメールでお送りします</small></td></tr>
-          <tr><th scope="row">会場</th><td>Beauty Grow本社（予定）<small>東京都港区南青山1-15-9 第45興和ビル 8F</small><small>参加人数に応じて変更する場合があります。お申し込みの方にご連絡します</small><small>会場参加の方は、終了後に懇親会（任意参加）があります</small></td></tr>
-          <tr><th scope="row">対象</th><td>美容師<small>店長・マネージャーなど役職者の方におすすめです</small></td></tr>
+          <tr><th scope="row">会場</th><td>Beauty Grow本社（予定）<small>東京都港区南青山1-15-9 第45興和ビル 8F</small><small>参加人数に応じて変更する場合があります。お申し込みの方にご連絡します</small></td></tr>
+          <tr><th scope="row">対象</th><td>美容師スタイリスト<small>店長・マネージャーなど役職者の方におすすめです</small></td></tr>
           <tr><th scope="row">定員</th><td>会場参加は各回10名（先着順）<small>オンライン参加は定員なし</small></td></tr>
           <tr><th scope="row">参加費</th><td>無料</td></tr>
           <tr><th scope="row">持ち物</th><td>パソコン</td></tr>
@@ -471,19 +454,6 @@
           <tr><th scope="row">申込締切</th><td>各回の前日まで</td></tr>
         </tbody>
       </table>
-    </div>
-  </section>
-
-  <!-- 5b. FAQ -->
-  <section class="on-navy faq" aria-labelledby="sec-faq">
-    <div class="wrap">
-      <span class="sec-label">FAQ</span>
-      <h2 id="sec-faq">よくある質問</h2>
-      <details><summary>オンラインでも参加できますか？顔を出す必要はありますか？</summary><div class="a"><p>オンラインで参加できます。カメラはオフのままで大丈夫です。参加用のURLは、開催日の前日までにメールでお送りします。</p></div></details>
-      <details><summary>AIを使ったことがなくても大丈夫ですか？</summary><div class="a"><p>大丈夫です。AIの仕組みの話ではなく、口コミ返信やHPBの更新など、サロンの仕事でどう使うかを実演しながらお伝えします。</p></div></details>
-      <details><summary>役職がないスタイリストでも参加できますか？</summary><div class="a"><p>参加できます。店長・マネージャーなど事務仕事を抱えている方に特におすすめの内容です。</p></div></details>
-      <details><summary>参加費はかかりますか？</summary><div class="a"><p>無料です。会場参加の方の懇親会も任意参加です。</p></div></details>
-      <details><summary>当日は何を持っていけばいいですか？</summary><div class="a"><p>パソコンをお持ちください。</p></div></details>
     </div>
   </section>
 
@@ -618,6 +588,7 @@
 <footer>
   <div class="wrap">
     <p class="org">主催：株式会社Beauty Grow</p>
+    <p class="org-detail">代表 齋藤 光司｜東京都港区南青山1-15-9 第45興和ビル 8F</p>
     <p><a href="https://beautygrow.co.jp/" target="_blank" rel="noopener">公式サイト</a>　｜　<a href="privacy.html">プライバシーポリシー</a></p>
     <p>&copy; Beauty Grow Inc.</p>
   </div>
@@ -791,8 +762,10 @@
     });
     Array.prototype.forEach.call(document.querySelectorAll('.js-dm-box, .js-ig-row'), function (el) { el.hidden = false; });
     var igLink = document.querySelector('.js-ig-link');
-    igLink.href = 'https://www.instagram.com/' + CONFIG.instagramId + '/';
-    igLink.textContent = '@' + CONFIG.instagramId;
+    if (igLink) {
+      igLink.href = 'https://www.instagram.com/' + CONFIG.instagramId + '/';
+      igLink.textContent = '@' + CONFIG.instagramId;
+    }
   }
 
   /* ----- Close the form after the deadline ----- */
