@@ -13,14 +13,14 @@
     document.head.appendChild(robots);
   }
 </script>
-<title>美容師のためのAI実践講習｜主催：株式会社Beauty Grow</title>
-<meta name="description" content="口コミ返信、HPBブログ掲載、売上の振り返り。サロンの事務作業をAIに任せるやり方を、BeautyGrow代表が実演します。12月1日（火）19:00〜・スタイリスト限定・定員10名。参加費無料。">
+<title>美容師のための業務効率化AI講習｜店長・マネージャー向け｜主催：株式会社Beauty Grow</title>
+<meta name="description" content="口コミ返信、HPBブログ掲載、売上の振り返り。サロンの事務作業をAIに任せるやり方を、BeautyGrow代表が実演します。12月8日（火）から全6日程・19:00〜。会場（南青山）またはオンライン（顔出し不要）。参加費無料。">
 
 <!-- OGP (og:url / og:image must be absolute URLs) -->
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="美容師のためのAI実践講習">
-<meta property="og:title" content="美容師のためのAI実践講習｜スタイリスト限定10名">
-<meta property="og:description" content="サロンワークの「すき間時間」で使えるAIのやり方だけ、持ち帰れます。12月1日（火）19:00〜21:00。参加費無料。主催：株式会社Beauty Grow">
+<meta property="og:site_name" content="美容師のための業務効率化AI講習">
+<meta property="og:title" content="美容師のための業務効率化AI講習｜店長・マネージャーの方へ（参加無料・オンライン可）">
+<meta property="og:description" content="サロンワークの「すき間時間」で使えるAIのやり方だけ、持ち帰れます。12月8日（火）から全6日程。オンライン参加（顔出し不要）も可。参加費無料。主催：株式会社Beauty Grow">
 <meta property="og:url" content="https://beautygrow-lp.github.io/ai-event-lp/">
 <meta property="og:image" content="https://beautygrow-lp.github.io/ai-event-lp/images/ogp.png">
 <meta property="og:image:width" content="1200">
@@ -377,6 +377,47 @@
   /* Instructor highlight */
   .badge-70 { display: flex; justify-content: center; align-items: baseline; gap: 6px; white-space: nowrap; margin: -4px 0 26px; padding: 8px 14px 9px; font-size: 15px; background: var(--accent); color: #fff; font-weight: 700; border-radius: var(--blob); box-shadow: 0 8px 18px -10px rgba(125, 70, 48, .7); }
   .badge-70 b { font-family: var(--serif); font-size: 28px; font-weight: 800; line-height: 1; letter-spacing: .02em; }
+
+  /* ===== v2 (2026-11-25): manager-targeted first view, pain, before/after, FAQ ===== */
+  .target-pill { display: inline-block; margin: 0 0 14px; background: var(--accent); color: #fff; font-weight: 700; font-size: 14px; letter-spacing: .04em; padding: 6px 16px; border-radius: 99px; }
+  .event-name { margin: 0 0 14px; font-family: var(--serif); font-weight: 800; line-height: 1.1; }
+  .event-name span { display: block; font-size: 22px; color: var(--accent-dark); letter-spacing: .06em; }
+  .event-name b { display: block; font-size: 64px; font-weight: 800; letter-spacing: .02em; color: var(--green); }
+  .hero h1 { font-size: 26px; }
+  .badges { display: flex; flex-wrap: wrap; gap: 6px; list-style: none; padding: 0; margin: 0 0 14px; }
+  .badges li { font-size: 13px; font-weight: 700; padding: 3px 12px; border-radius: 99px; background: var(--green-soft); color: var(--green); }
+  .badges li.free { background: var(--error); color: #fff; }
+  .hero .event-box .date { font-size: 22px; }
+  .hero .btn { margin-top: 4px; }
+  .cta-note { text-align: center; font-size: 12px; color: var(--ink-sub); margin: 8px 0 0; }
+  .cta-mid { margin-top: 32px; }
+  .pains { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
+  .pains li { background: var(--card); box-shadow: var(--shadow); border-radius: var(--blob); padding: 14px 16px 14px 44px; position: relative; font-weight: 500; line-height: 1.65; }
+  .pains li::before { content: ""; position: absolute; left: 16px; top: 18px; width: 16px; height: 16px; border: 2px solid var(--accent); border-radius: 4px; }
+  .pains li::after { content: ""; position: absolute; left: 20px; top: 19px; width: 6px; height: 11px; border: solid var(--accent); border-width: 0 2.5px 2.5px 0; transform: rotate(45deg); }
+  .pains em { font-style: normal; font-weight: 700; color: var(--accent-dark); }
+  .punch { margin: 28px 0 0; text-align: center; font-family: var(--serif); font-weight: 800; font-size: 22px; line-height: 1.6; }
+  .ba { display: grid; gap: 12px; margin-top: 8px; }
+  .ba-row { background: var(--card); box-shadow: var(--shadow); border-radius: var(--blob); padding: 14px 16px; }
+  .ba-row h3 { margin: 0 0 8px; font-size: 15px; color: var(--green); }
+  .ba-row .cols { display: grid; grid-template-columns: 1fr auto 1fr; gap: 8px; align-items: center; font-size: 13px; line-height: 1.6; }
+  .ba-row .before { color: var(--ink-sub); }
+  .ba-row .after { font-weight: 700; }
+  .ba-row .arrow { color: var(--accent); font-weight: 700; }
+  .ba-label { display: block; font-size: 10px; letter-spacing: .1em; font-weight: 700; color: var(--ink-sub); }
+  .ba-row .after .ba-label { color: var(--accent); }
+  /* v3 (2026-11-25): benefit headline first, event name as a label */
+  .hero h1 { font-size: 34px; line-height: 1.45; margin: 0 0 14px; }
+  .event-name { display: inline-flex; align-items: baseline; gap: 6px; background: var(--green); color: #fff; padding: 6px 14px 8px; border-radius: var(--blob); margin: 0 0 18px; }
+  .event-name span { display: inline; font-size: 14px; color: #e6e2d3; letter-spacing: .04em; }
+  .event-name b { display: inline; font-size: 24px; color: #fff; }
+  .sessions { display: grid; grid-template-columns: 1fr 1fr; gap: 4px 12px; margin: 4px 0 10px; font-family: var(--serif); font-weight: 800; font-size: 19px; line-height: 1.5; }
+  .sessions .dow { font-size: 14px; }
+  .sessions-time { font-size: 13px; color: var(--ink-sub); margin: 0 0 8px; }
+  .radios.cols2 { grid-template-columns: 1fr 1fr; }
+  .radios label.is-full { color: #a9a294; }
+  .radios .sub { display: block; font-size: 12px; color: var(--ink-sub); }
+  @media (min-width: 768px) { .hero h1 { font-size: 44px; } }
 </style>
 </head>
 <body>
@@ -392,14 +433,71 @@
   <!-- 1. First view (headline switches by utm_content=a|b|c to match the ad) -->
   <section class="hero" aria-labelledby="hero-title">
     <div class="wrap">
-      <p class="eyebrow"><span>美容師のための AI実践講習</span></p>
-      <h1 id="hero-title">閉店後のPC作業、<br><mark>AIに任せて</mark>帰ろう。</h1>
+      <p class="target-pill">店長・マネージャーなど役職者の方へ</p>
+      <h1 id="hero-title">美容師の時間は、<br><mark>お客様のために</mark>。</h1>
+      <p class="event-name"><span>美容師のための</span><b>業務効率化AI講習</b></p>
       <div class="hero-voice">
         <img src="images/staff-takahashi.png" width="182" height="257" alt="高橋さんの写真">
         <div>
-          <p class="hv-quote">「月20時間の店長業務が10分になって家族との時間が増えました！」</p>
+          <p class="hv-quote">「月20時間の店長業務が10分に。お客様やスタッフと向き合う時間が増えました！」</p>
           <p class="hv-by">高橋さん｜CELESTE 石神井公園店・川口店 店長</p>
         </div>
+      </div>
+      <ul class="badges">
+        <li class="free">参加無料</li>
+        <li>オンライン・顔出しなしOK</li>
+        <li>AIが初めての方も歓迎</li>
+      </ul>
+      <div class="event-box">
+        <p class="sessions-time">全6日程から選べます｜各回19:00〜21:00</p>
+        <div class="sessions" id="hero-sessions"></div>
+        <ul>
+          <li>会場（東京・南青山）またはオンライン（顔出し不要）</li>
+          <li>講師：齋藤 光司（Beauty Grow代表・5年で70店舗）</li>
+        </ul>
+      </div>
+      <a class="btn js-cta" href="#apply">無料で参加を申し込む<small>入力1分</small></a>
+    </div>
+  </section>
+
+  <!-- 1b. Pain -->
+  <section class="paper" aria-labelledby="sec-pain">
+    <div class="wrap">
+      <span class="sec-label">CHECK</span>
+      <h2 id="sec-pain">こんな毎日に、<br>心当たりはありませんか？</h2>
+      <ul class="pains">
+        <li>閉店後に、<em>口コミ返信とHPBの更新</em>がまだ残っている</li>
+        <li>売上や指名の振り返りを、<em>休みの日</em>にまとめてやっている</li>
+        <li>スタッフの相談や確認で、<em>自分のお客様に向き合う時間</em>が削られる</li>
+        <li>「AIが便利らしい」とは聞くけれど、<em>サロンのどこで使えばいいか</em>分からない</li>
+      </ul>
+      <p class="punch">がんばる店長ほど、<br><mark>事務仕事が積み上がっていく。</mark></p>
+    </div>
+  </section>
+
+  <!-- 1c. Before / After -->
+  <section aria-labelledby="sec-ba">
+    <div class="wrap">
+      <span class="sec-label">BEFORE / AFTER</span>
+      <h2 id="sec-ba">店長がやらなくていい作業は、<br>AIに渡せます</h2>
+      <p class="sec-lead">原因は店長のがんばり不足ではなく、<br>事務を1人で抱える仕組みです。</p>
+      <div class="ba">
+        <div class="ba-row">
+          <h3>口コミ・LINE返信</h3>
+          <div class="cols"><p class="before"><span class="ba-label">BEFORE</span>毎回ゼロから文面を考える</p><span class="arrow">→</span><p class="after"><span class="ba-label">AFTER</span>AIの下書きを確認して送るだけ</p></div>
+        </div>
+        <div class="ba-row">
+          <h3>HPB・サロンボード</h3>
+          <div class="cols"><p class="before"><span class="ba-label">BEFORE</span>閉店後に1件ずつ入力</p><span class="arrow">→</span><p class="after"><span class="ba-label">AFTER</span>掲載・クーポン更新の入力をAIが代行</p></div>
+        </div>
+        <div class="ba-row">
+          <h3>売上・指名の振り返り</h3>
+          <div class="cols"><p class="before"><span class="ba-label">BEFORE</span>休みの日に表とにらめっこ</p><span class="arrow">→</span><p class="after"><span class="ba-label">AFTER</span>スプレッドシートやExcelから数分で</p></div>
+        </div>
+      </div>
+      <div class="cta-mid">
+        <a class="btn js-cta" href="#apply">無料で参加を申し込む<small>入力1分</small></a>
+        <p class="cta-note">全6日程・オンライン参加OK</p>
       </div>
     </div>
   </section>
@@ -408,7 +506,7 @@
   <section class="paper" aria-labelledby="sec-about">
     <div class="wrap">
       <span class="sec-label">ABOUT</span>
-      <h2 id="sec-about">AI講習で、なにが<br>できるようになる？</h2>
+      <h2 id="sec-about">当日、持ち帰れること</h2>
       <p class="sec-lead">「AIってすごいらしい」で終わらせず、<br>サロンの仕事のどこで、どう使うかまで落とし込みます。</p>
 
       <ul class="learn learn-ic">
@@ -456,6 +554,10 @@
           <p>AIで効率化して空いた時間で、もっとお客様に向き合ってほしい。そして売上も伸ばして、みんなが無理なく稼げる環境をつくりたい。それが、この講習を自分で開く一番の理由です。</p>
         </div>
       </div>
+      <div class="cta-mid">
+        <a class="btn js-cta" href="#apply">無料で参加を申し込む<small>入力1分</small></a>
+        <p class="cta-note">各回の前日まで受付｜会場参加は各回10名・先着順</p>
+      </div>
 
     </div>
   </section>
@@ -485,26 +587,40 @@
       <h2 id="sec-overview">開催概要</h2>
       <table class="info">
         <tbody>
-          <tr><th scope="row">講習名</th><td>美容師のためのAI実践講習</td></tr>
-          <tr><th scope="row">日時</th><td>12月1日（火）19:00〜21:00<small>終了後に懇親会（任意参加）</small></td></tr>
-          <tr><th scope="row">会場</th><td>Beauty Grow本社（予定）<small>東京都港区南青山1-15-9 第45興和ビル 8F</small><small>参加人数に応じて変更する場合があります。お申し込みの方にご連絡します</small></td></tr>
-          <tr><th scope="row">対象</th><td>美容師スタイリスト限定</td></tr>
-          <tr><th scope="row">定員</th><td>10名（先着順）</td></tr>
+          <tr><th scope="row">講習名</th><td>美容師のための業務効率化AI講習</td></tr>
+          <tr><th scope="row">日時</th><td>12月8日（火）・12月22日（火）・1月13日（水）・1月26日（火）・2月9日（火）・2月24日（水）<small>各回19:00〜21:00。同じ内容です。ご都合のよい回を1つお選びください</small></td></tr>
+          <tr><th scope="row">参加方法</th><td>会場またはオンライン<small>オンラインは顔出し不要。参加用URLは前日までにメールでお送りします</small></td></tr>
+          <tr><th scope="row">会場</th><td>Beauty Grow本社（予定）<small>東京都港区南青山1-15-9 第45興和ビル 8F</small><small>参加人数に応じて変更する場合があります。お申し込みの方にご連絡します</small><small>会場参加の方は、終了後に懇親会（任意参加）があります</small></td></tr>
+          <tr><th scope="row">対象</th><td>美容師<small>店長・マネージャーなど役職者の方におすすめです</small></td></tr>
+          <tr><th scope="row">定員</th><td>会場参加は各回10名（先着順）<small>オンライン参加は定員なし</small></td></tr>
           <tr><th scope="row">参加費</th><td>無料</td></tr>
           <tr><th scope="row">持ち物</th><td>パソコン</td></tr>
           <tr><th scope="row">講師</th><td>齋藤 光司（株式会社Beauty Grow 代表）</td></tr>
-          <tr><th scope="row">申込締切</th><td>11月30日（月）<small>定員になり次第、締め切ります</small></td></tr>
+          <tr><th scope="row">申込締切</th><td>各回の前日まで</td></tr>
         </tbody>
       </table>
     </div>
   </section>
 
+  <!-- 5b. FAQ -->
+  <section class="paper faq" aria-labelledby="sec-faq">
+    <div class="wrap">
+      <span class="sec-label">FAQ</span>
+      <h2 id="sec-faq">よくある質問</h2>
+      <details><summary>オンラインでも参加できますか？顔を出す必要はありますか？</summary><div class="a"><p>オンラインで参加できます。カメラはオフのままで大丈夫です。参加用のURLは、開催日の前日までにメールでお送りします。</p></div></details>
+      <details><summary>AIを使ったことがなくても大丈夫ですか？</summary><div class="a"><p>大丈夫です。AIの仕組みの話ではなく、口コミ返信やHPBの更新など、サロンの仕事でどう使うかを実演しながらお伝えします。</p></div></details>
+      <details><summary>役職がないスタイリストでも参加できますか？</summary><div class="a"><p>参加できます。店長・マネージャーなど事務仕事を抱えている方に特におすすめの内容です。</p></div></details>
+      <details><summary>参加費はかかりますか？</summary><div class="a"><p>無料です。会場参加の方の懇親会も任意参加です。</p></div></details>
+      <details><summary>当日は何を持っていけばいいですか？</summary><div class="a"><p>パソコンをお持ちください。</p></div></details>
+    </div>
+  </section>
+
   <!-- 6. Form -->
-  <section id="apply" class="paper" aria-labelledby="sec-apply">
+  <section id="apply" aria-labelledby="sec-apply">
     <div class="wrap">
       <span class="sec-label">ENTRY</span>
       <h2 id="sec-apply">お申し込み</h2>
-      <p class="sec-lead">定員10名・先着順です。<br>下のフォーム、またはInstagramのDMから申し込めます。</p>
+      <p class="sec-lead">ご都合のよい日程と参加方法を選んでください。<br>会場参加は各回10名・先着順です。</p>
 
       <div class="form-card">
         <p class="form-intro">送信後、ご入力のメールアドレスに確認メールをお送りします。</p>
@@ -513,6 +629,22 @@
 
         <form id="entry-form" novalidate>
           <p class="form-msg" id="form-msg" role="alert"></p>
+
+          <div class="field" data-field="session">
+            <span class="label">参加する日程<span class="req">必須</span></span>
+            <div class="radios" id="session-radios"></div>
+            <span class="hint">各回19:00〜21:00・同じ内容です</span>
+            <p class="err">参加する日程を選んでください</p>
+          </div>
+
+          <div class="field" data-field="style">
+            <span class="label">参加方法<span class="req">必須</span></span>
+            <div class="radios cols2">
+              <label><input type="radio" name="style" value="会場"><span>会場<span class="sub">東京・南青山</span></span></label>
+              <label><input type="radio" name="style" value="オンライン"><span>オンライン<span class="sub">顔出し不要</span></span></label>
+            </div>
+            <p class="err">参加方法を選んでください</p>
+          </div>
 
           <div class="field" data-field="name">
             <label for="f-name">お名前<span class="req">必須</span></label>
@@ -543,7 +675,7 @@
           <div class="field" data-field="position">
             <label for="f-position">現在のお立場<span class="opt-badge">任意</span></label>
             <input type="text" id="f-position" name="position" maxlength="20" placeholder="例）店長、スタイリスト">
-            <span class="hint">本講習は美容師スタイリストの方限定です</span>
+            <span class="hint">店長・マネージャー・スタイリストなど</span>
           </div>
 
           <div class="field" data-field="salon">
@@ -603,7 +735,7 @@
 <!-- Sticky CTA -->
 <div class="sticky-cta" id="sticky-cta">
   <div class="wrap">
-    <a class="btn js-cta" href="#apply">無料で申し込む<small>定員10名・先着順</small></a>
+    <a class="btn js-cta" href="#apply">無料で申し込む<small>全6日程・オンラインOK</small></a>
   </div>
 </div>
 
@@ -616,8 +748,6 @@
     testMode: window.LP_TEST_MODE === true, // switch at the top of <head>
     // GAS web app URL: https://script.google.com/macros/s/xxxx/exec
     endpoint: 'https://script.google.com/macros/s/AKfycbw2oxmzJh9FUDOhiZY07MSgYgoz3Y2hfarkSY_lFvlesEzuGOV4fQ2_TgYHwzlkogbH/exec',
-    // Application deadline (Japan time). Form closes automatically after this.
-    deadline: '2026-11-30T23:59:59+09:00', // keep in sync with the overview table and gas/Code.gs
     thanksUrl: 'thanks.html',
     // Seats left, updated by hand (e.g. 3). Leave null to hide.
     seatsLeft: null,
@@ -625,8 +755,28 @@
     instagramId: 'beautygrow_recruit'
   };
 
+  /* ===== Sessions: keep in sync with SESSIONS in gas/Code.gs. Each closes at its deadline (the day before). ===== */
+  var SESSIONS = [
+    { id: '2026-12-08', md: '12/8', dow: '火', deadline: '2026-12-07T23:59:59+09:00' },
+    { id: '2026-12-22', md: '12/22', dow: '火', deadline: '2026-12-21T23:59:59+09:00' },
+    { id: '2027-01-13', md: '1/13', dow: '水', deadline: '2027-01-12T23:59:59+09:00' },
+    { id: '2027-01-26', md: '1/26', dow: '火', deadline: '2027-01-25T23:59:59+09:00' },
+    { id: '2027-02-09', md: '2/9', dow: '火', deadline: '2027-02-08T23:59:59+09:00' },
+    { id: '2027-02-24', md: '2/24', dow: '水', deadline: '2027-02-23T23:59:59+09:00' }
+  ];
+  var now = Date.now();
+  var openSessions = SESSIONS.filter(function (x) { return now <= new Date(x.deadline).getTime(); });
+
   /* ===== Headline per ad creative (utm_content=a|b|c). Text only, inserted with textContent. ===== */
   var VARIANTS = {
+    // v2 ads (from 2026-11-26). No utm_content shows the default h1 (same as v5).
+    v1: { h1: ['パソコンの前より、', '鏡の前に', '。'] },
+    v2: { h1: ['事務はAIに。', '店長は、お客様に', '。'] },
+    v3: { h1: ['スタッフと向き合う時間を、', 'AIでつくる', '。'] },
+    v4: { h1: ['閉店後の事務、', 'もう残らない', '。'] },
+    v5: { h1: ['美容師の時間は、', 'お客様のために', '。'] },
+    v6: { h1: ['事務に追われる店長から、', '人を育てる店長へ', '。'] },
+    // first test (2026-11-17〜)
     a: {
       h1: ['閉店後のPC作業、', 'AIに任せて', '帰ろう。']
     },
@@ -679,6 +829,29 @@
     h1.appendChild(document.createTextNode(variant.h1[2]));
   }
 
+  /* ----- Session list (hero) and radio buttons (form); past sessions are left out ----- */
+  var heroSessions = document.getElementById('hero-sessions');
+  var sessionRadios = document.getElementById('session-radios');
+  openSessions.forEach(function (x) {
+    var p = document.createElement('p');
+    p.style.margin = '0';
+    p.appendChild(document.createTextNode(x.md));
+    var d = document.createElement('span');
+    d.className = 'dow';
+    d.textContent = '（' + x.dow + '）';
+    p.appendChild(d);
+    heroSessions.appendChild(p);
+
+    var label = document.createElement('label');
+    var input = document.createElement('input');
+    input.type = 'radio'; input.name = 'session'; input.value = x.id;
+    var t = document.createElement('span');
+    t.textContent = x.md + '（' + x.dow + '）19:00〜21:00';
+    label.appendChild(input); label.appendChild(t);
+    sessionRadios.appendChild(label);
+  });
+  if (openSessions.length === 1) sessionRadios.querySelector('input').checked = true;
+
   /* ----- Seats left (shown only when set) ----- */
   if (typeof CONFIG.seatsLeft === 'number' && CONFIG.seatsLeft >= 0) {
     var seats = document.getElementById('seats-left');
@@ -700,7 +873,7 @@
   }
 
   /* ----- Close the form after the deadline ----- */
-  var isClosed = Date.now() > new Date(CONFIG.deadline).getTime();
+  var isClosed = openSessions.length === 0;
   if (isClosed) {
     form.hidden = true;
     document.getElementById('closed-msg').hidden = false;
@@ -749,6 +922,8 @@
       setError('kana', f.kana.value !== '' && !KANA_RE.test(f.kana.value)),
       setError('email', !EMAIL_RE.test(f.email.value)),
       setError('tel', !/^0\d{9,10}$/.test(telDigits)),
+      setError('session', !form.querySelector('input[name="session"]:checked')),
+      setError('style', !form.querySelector('input[name="style"]:checked')),
       setError('consent', !f.consent.checked)
     ];
     return checks.every(Boolean);
@@ -780,6 +955,7 @@
     if (!validate()) {
       showMsg('入力内容をご確認ください。');
       var first = form.querySelector('.has-error input, .has-error textarea');
+      if (!first) first = form.querySelector('.has-error');
       if (first) first.focus({ preventScroll: true });
       return;
     }

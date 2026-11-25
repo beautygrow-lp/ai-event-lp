@@ -204,6 +204,7 @@ git push
 - このフォルダの git は `origin` が新リポジトリ。旧リポジトリは `old-kakiuchi` として残し、push できないようにしてある（転送ページの上書き防止）
 
 ### 経路別URL（広告・投稿・LINE・DMで使い分ける）
+一覧の正本はスプレッドシート「AI実践講習 LP URL管理」（https://docs.google.com/spreadsheets/d/17utT5k5L09Zry3C4dJPOgPraVlX4GnU2OYn5RpGDaas/edit）。新しい経路を足すときはそちらに行を追加する。ゆうパックDMチラシの二次元コードは `utm_medium=yupack`（旧URL経由）。
 ```
 Meta広告   https://beautygrow-lp.github.io/ai-event-lp/?utm_source=meta&utm_medium=paid&utm_campaign=ai1201
 Instagram  https://beautygrow-lp.github.io/ai-event-lp/?utm_source=instagram&utm_medium=organic&utm_campaign=ai1201
