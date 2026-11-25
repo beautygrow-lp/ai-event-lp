@@ -2,3 +2,4 @@ gas/
 .DS_Store
 .env
 .env.*
+_preview/
