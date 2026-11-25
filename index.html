@@ -159,13 +159,18 @@
 
   /* ---------- Before / After ---------- */
   .ba { border-top: 1px solid var(--line-on-off); }
-  .ba-row { padding: 18px 0; border-bottom: 1px solid var(--line-on-off); }
-  .ba-row h3 { margin: 0 0 8px; font-size: 16px; }
+  .ba-row { padding: 14px 0; border-bottom: 1px solid var(--line-on-off); }
+  .ba-row h3 { margin: 0 0 4px; font-size: 16px; }
   .ba-row .cols { display: grid; grid-template-columns: 1fr auto 1fr; gap: 10px; align-items: start; font-size: 14px; line-height: 1.6; }
   .ba-row p { margin: 0; }
   .ba-row .before { color: var(--grey); }
   .ba-row .after { font-weight: 700; }
-  .ba-row .arrow { padding-top: 18px; }
+  .ba-row .arrow { padding-top: 16px; }
+  .cause { margin: 18px 0 0; font-size: 15px; opacity: .85; }
+  .on-off .more-label { margin-top: 32px; }
+  .on-off .more li { border-color: var(--line-on-off); }
+  .more li.is-key { border-color: var(--navy); }
+  .on-off + .on-off { border-top: 1px solid var(--line-on-off); } /* two light sections in a row */
   .ba-label { display: block; font-size: 10px; letter-spacing: .12em; font-weight: 700; color: var(--grey); }
 
   /* ---------- About ---------- */
@@ -345,15 +350,16 @@
         <li>「AIが便利らしい」とは聞くけれど、<em>サロンのどこで使えばいいか</em>分からない</li>
       </ul>
       <p class="punch">がんばる店長ほど、<br><mark>事務仕事が積み上がっていく。</mark></p>
+      <p class="cause">原因は店長のがんばり不足ではなく、<br>事務を1人で抱える仕組みです。</p>
     </div>
   </section>
 
-  <!-- 1c. Before / After -->
-  <section class="on-off" aria-labelledby="sec-ba">
+  <!-- 2. About (before / after of four tasks) -->
+  <section class="on-off" aria-labelledby="sec-about">
     <div class="wrap">
-      <span class="sec-label">BEFORE / AFTER</span>
-      <h2 id="sec-ba">店長がやらなくていい作業は、<br>AIに渡せます</h2>
-      <p class="sec-lead">原因は店長のがんばり不足ではなく、<br>事務を1人で抱える仕組みです。</p>
+      <span class="sec-label">ABOUT</span>
+      <h2 id="sec-about">当日、持ち帰れること</h2>
+      <p class="sec-lead">「AIってすごいらしい」で終わらせず、<br>サロンの仕事のどこで、どう使うかまで落とし込みます。</p>
       <div class="ba">
         <div class="ba-row">
           <h3>口コミ・LINE返信</h3>
@@ -367,41 +373,20 @@
           <h3>売上・指名の振り返り</h3>
           <div class="cols"><p class="before"><span class="ba-label">BEFORE</span>休みの日に表とにらめっこ</p><span class="arrow">→</span><p class="after"><span class="ba-label">AFTER</span>スプレッドシートやExcelから数分で</p></div>
         </div>
+        <div class="ba-row">
+          <h3>WEBで発信</h3>
+          <div class="cols"><p class="before"><span class="ba-label">BEFORE</span>スタイルやメニューの紹介に手が回らない</p><span class="arrow">→</span><p class="after"><span class="ba-label">AFTER</span>ページにまとめて共有</p></div>
+        </div>
       </div>
-      <div class="cta-mid">
-        <a class="btn js-cta" href="#apply">無料で参加を申し込む<small>入力1分</small></a>
-        <p class="cta-note">全6日程・オンライン参加OK</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- 2. About -->
-  <section class="on-navy" aria-labelledby="sec-about">
-    <div class="wrap">
-      <span class="sec-label">ABOUT</span>
-      <h2 id="sec-about">当日、持ち帰れること</h2>
-      <p class="sec-lead">「AIってすごいらしい」で終わらせず、<br>サロンの仕事のどこで、どう使うかまで落とし込みます。</p>
-
-      <ul class="learn">
-        <li><b>口コミ・LINE返信</b><span>下書きはAI。<br>確認して送るだけ</span></li>
-        <li><b>HPB・サロンボード</b><span>掲載・クーポン更新<br>の入力をAIが代行</span></li>
-        <li><b>売上・<wbr>指名の振り返り</b><span>スプレッドシートや<br>Excelから数分で</span></li>
-        <li><b>WEBで発信</b><span>スタイルやメニューを<br>ページにまとめて共有</span></li>
-      </ul>
       <p class="more-label">ほかにも、こんなことができます</p>
       <ul class="more">
-        <li>手順書をAIに<br>持たせて新人教育</li>
+        <li class="is-key"><b>手順書をAIに<br>持たせて新人教育</b></li>
         <li>施術の合間に<br>スマホで承認</li>
         <li>いくつもの作業を<br>同時に片づける</li>
       </ul>
-
-      <div class="apply-box">
-        <p class="apply-title">お申し込み</p>
-        <p class="apply-sub">お申し込み方法は、次の2つから選べます</p>
-        <p class="seats" id="seats-left" hidden></p>
-        <a class="btn js-cta" href="#apply">① フォームで申し込む<small>入力1分</small></a>
-        <a class="btn-line js-dm" href="#" target="_blank" rel="noopener" hidden>② InstagramのDMで申し込む</a>
-        <p class="dm-howto js-dm" hidden>DMより「AIイベントに参加希望」と送信ください</p>
+      <div class="cta-mid">
+        <a class="btn js-cta" href="#apply">無料で参加を申し込む<small>入力1分</small></a>
+        <p class="cta-note">全6日程・オンライン参加OK</p>
       </div>
     </div>
   </section>
@@ -776,8 +761,8 @@
   syncHeroButtons();
 
   /* ----- Seats left (shown only when set) ----- */
-  if (typeof CONFIG.seatsLeft === 'number' && CONFIG.seatsLeft >= 0) {
-    var seats = document.getElementById('seats-left');
+  var seats = document.getElementById('seats-left');
+  if (seats && typeof CONFIG.seatsLeft === 'number' && CONFIG.seatsLeft >= 0) {
     seats.textContent = CONFIG.seatsLeft > 0 ? '残り' + CONFIG.seatsLeft + '席' : '満席（キャンセル待ちで受付中）';
     seats.hidden = false;
   }
